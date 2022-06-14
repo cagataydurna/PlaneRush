@@ -19,7 +19,5 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         transform.Translate(Vector3.forward*Time.deltaTime*10);
-        
-        
     }
 }
