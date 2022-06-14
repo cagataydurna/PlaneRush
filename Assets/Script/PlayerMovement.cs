@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     {
         transform.Translate(Vector3.forward*Time.deltaTime*movementSpeed);
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3f, 3f),
-            transform.position.y,
+           transform.position.y,
             transform.position.z);
         if (Input.touchCount > 0)
         {
@@ -33,7 +33,20 @@ public class PlayerMovement : MonoBehaviour
                 transform.position = new Vector3(
                     transform.position.x + theTouch.deltaPosition.x * Time.deltaTime * horSpeed,
                     transform.position.y, transform.position.z);
+                
+               if(theTouch.deltaPosition.x<0) transform.rotation=Quaternion.Lerp(transform.rotation,
+                    Quaternion.Euler(0,-12,0),
+                    Time.deltaTime*10);
+               else if(theTouch.deltaPosition.x>0) transform.rotation=Quaternion.Lerp(transform.rotation,
+                   Quaternion.Euler(0,12,0),
+                   Time.deltaTime*10);
+               else transform.rotation=Quaternion.Lerp(transform.rotation,
+                   Quaternion.Euler(0,0,0),
+                   Time.deltaTime*10);
             }
-        }
+            
+        }else transform.rotation=Quaternion.Lerp(transform.rotation,
+            Quaternion.Euler(0,0,0),
+            Time.deltaTime*10);
     }
 }
