@@ -35,18 +35,18 @@ public class PlayerMovement : MonoBehaviour
                     transform.position.y, transform.position.z);
                 
                if(theTouch.deltaPosition.x<0) transform.rotation=Quaternion.Lerp(transform.rotation,
-                    Quaternion.Euler(0,-12,0),
-                    Time.deltaTime*10);
+                    Quaternion.Euler(0,0,12),
+                    Time.deltaTime*4);
                else if(theTouch.deltaPosition.x>0) transform.rotation=Quaternion.Lerp(transform.rotation,
-                   Quaternion.Euler(0,12,0),
-                   Time.deltaTime*10);
+                   Quaternion.Euler(0,0,-12),
+                   Time.deltaTime*4);
                else transform.rotation=Quaternion.Lerp(transform.rotation,
                    Quaternion.Euler(0,0,0),
-                   Time.deltaTime*10);
+                   Time.deltaTime*4);
             }
             
         }else transform.rotation=Quaternion.Lerp(transform.rotation,
             Quaternion.Euler(0,0,0),
-            Time.deltaTime*10);
+            Time.deltaTime*4);
     }
 }
