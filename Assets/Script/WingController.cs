@@ -7,10 +7,9 @@ public class WingController : MonoBehaviour
 {
     public GameObject wing;
 
-    private void Start()
-    {
-        
-    }
+     void Start()
+     {
+     }
 
     private void Update()
     {
@@ -19,9 +18,10 @@ public class WingController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "wing")
+        if (collision.gameObject.tag == "obstacle")
         {
-            //gameObject.GetType("wing")+=new Vector3(0,0,0.01f);
+            wing = GameObject.FindGameObjectWithTag("wing");
+            wing.transform.localScale+=new Vector3(0,0,0.2f);
             Destroy(collision.gameObject);
         }
     }

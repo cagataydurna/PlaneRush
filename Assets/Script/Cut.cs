@@ -23,8 +23,8 @@ public class Cut : MonoBehaviour
          Debug.Log(other.ClosestPoint(refObj.transform.localPosition));
          otherObjTransform = other.gameObject.transform;
          SlicedHull cuttOff = Cutt(this.gameObject, mat);
-         GameObject downSideOfCut = cuttOff.CreateLowerHull(this.gameObject, null); 
-         GameObject upSideOfCut = cuttOff.CreateUpperHull(this.gameObject, null);
+         GameObject downSideOfCut = cuttOff.CreateLowerHull(this.gameObject, mat); 
+         GameObject upSideOfCut = cuttOff.CreateUpperHull(this.gameObject, mat);
          if (other.gameObject.transform.position.x< refObj.transform.position.x)
          {
             AddComponent(upSideOfCut);
@@ -62,6 +62,7 @@ public class Cut : MonoBehaviour
       obj.GetComponent<MeshCollider>().convex = true;
       obj.GetComponent<MeshCollider>().isTrigger = true;
       obj.AddComponent<Cut>();
+      obj.tag = "wing";
    }
 
    public void AddTransformsCutOff(GameObject obj)
