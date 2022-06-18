@@ -8,7 +8,7 @@ using UnityEngine;
 public class Cut : MonoBehaviour
 {
    public Material mat;
-   public Transform otherObjTransform;
+   public Vector3 otherObjTransform;
    private GameObject parent;
    public GameObject refObj;
    
@@ -20,8 +20,8 @@ public class Cut : MonoBehaviour
          Destroy(other.gameObject.GetComponent<MeshCollider>());
          parent = GameObject.FindWithTag("Chest");
          refObj = GameObject.FindWithTag("refObj");
-         Debug.Log(other.ClosestPoint(refObj.transform.localPosition));
-         otherObjTransform = other.gameObject.transform;
+         otherObjTransform = other.ClosestPoint(transform.position);
+         
          SlicedHull cuttOff = Cutt(this.gameObject, mat);
          GameObject downSideOfCut = cuttOff.CreateLowerHull(this.gameObject, mat); 
          GameObject upSideOfCut = cuttOff.CreateUpperHull(this.gameObject, mat);
@@ -34,7 +34,7 @@ public class Cut : MonoBehaviour
          }
          else
          {
-            AddComponent(downSideOfCut);
+            AddComponent(downSideOfCut);  
             AddTransformsLeftCut(downSideOfCut);
             AddTransformsCutOff(upSideOfCut);
             Destroy(this.gameObject);
@@ -50,9 +50,9 @@ public class Cut : MonoBehaviour
       
    }
 
-   public SlicedHull Cutt(GameObject obj, Material crossSection = null)
+   public SlicedHull Cutt(GameObject obj, Material crossSection)
    {
-      return obj.Slice(otherObjTransform.transform.position, otherObjTransform.transform.up, crossSection);
+      return obj.Slice(otherObjTransform, Vector3.right, crossSection);
    }
 
    public void AddComponent(GameObject obj)

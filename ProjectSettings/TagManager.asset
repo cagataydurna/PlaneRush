@@ -8,6 +8,8 @@ TagManager:
   - Chest
   - refObj
   - obstacle
+  - collectableWing
+  - ramp
   layers:
   - Default
   - TransparentFX

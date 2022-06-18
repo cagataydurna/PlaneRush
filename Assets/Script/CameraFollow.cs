@@ -10,19 +10,28 @@ public class CameraFollow : MonoBehaviour
     public GameObject player;
     public static CameraFollow _instance;
     public Vector3 offSet;
-    
+    public Transform TargetObject;
+    public float MoveSmoothTime = 0.3F;
+    public float RotationSpeed = 6f;
+    public Vector3 Offset = new Vector3(0f, 15f, 0f);
 
-     void Awake()
-     {
-         if (_instance == null) _instance = this;
-        
-     }
+    public bool Enabled = true;
 
-    void Update()
+    private Transform myTransform;
+    private Vector3 velocity = Vector3.zero;
+
+    void Awake()
     {
-        transform.position = Vector3.Lerp(transform.position,
-            player.transform.position+offSet,
+        myTransform = this.transform;
+    }
+
+    void FixedUpdate()
+    {
+        if (TargetObject != null && Enabled)
+        {
+            Vector3 targetPosition = TargetObject.TransformPoint(Offset);
+            myTransform.position = Vector3.SmoothDamp(myTransform.position, targetPosition, ref velocity, MoveSmoothTime);
             
-            Time.deltaTime*5);
+        }
     }
 }

@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * movementSpeed);
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3f, 3f),
