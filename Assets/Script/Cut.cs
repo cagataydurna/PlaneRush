@@ -8,6 +8,7 @@ using UnityEngine;
 public class Cut : MonoBehaviour
 {
    public Material mat;
+   public Material mat1;
    public Vector3 otherObjTransform;
    private GameObject parent;
    public GameObject refObj;
@@ -23,8 +24,8 @@ public class Cut : MonoBehaviour
          otherObjTransform = other.ClosestPoint(transform.position);
          
          SlicedHull cuttOff = Cutt(this.gameObject, mat);
-         GameObject downSideOfCut = cuttOff.CreateLowerHull(this.gameObject, mat); 
-         GameObject upSideOfCut = cuttOff.CreateUpperHull(this.gameObject, mat);
+         GameObject downSideOfCut = cuttOff.CreateLowerHull(this.gameObject, mat1); 
+         GameObject upSideOfCut = cuttOff.CreateUpperHull(this.gameObject, mat1);
          if (other.gameObject.transform.position.x< refObj.transform.position.x)
          {
             AddComponent(upSideOfCut);

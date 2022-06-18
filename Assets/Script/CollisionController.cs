@@ -26,14 +26,27 @@ public class CollisionController : MonoBehaviour
             Destroy(collision.gameObject);
         }else if (collision.gameObject.tag == "ramp")
         {
+            Physics.gravity = new Vector3(0, 1f, 0);
             transform.DOMoveY(10, 4f, false).OnStepComplete(()=>ToGround());
+            transform.DORotate(new Vector3(5f, 0, 0), 4f,
+                RotateMode.FastBeyond360).OnStepComplete(() => ToFallAxis()).OnStepComplete(() => ToFixAxis());
         }
     }
 
     void ToGround()
     {
-        
+        transform.DOMoveY(1, 5f, false);
+        Physics.gravity = new Vector3(0, -9.81f, 0);
+    }
 
-        transform.DOMoveY(1, 7f, false);
+    void ToFallAxis()
+    {
+        transform.transform.DORotate(new Vector3(-3f, 0, 0), 4f,
+            RotateMode.FastBeyond360);
+    }
+
+    void ToFixAxis()
+    {
+        transform.DORotate(new Vector3(0, 0, 0), 1f, RotateMode.FastBeyond360);
     }
 }
