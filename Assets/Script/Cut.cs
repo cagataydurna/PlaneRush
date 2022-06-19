@@ -20,7 +20,8 @@ public class Cut : MonoBehaviour
    private void OnTriggerEnter(Collider other)
    {
       if (other.gameObject.layer == LayerMask.NameToLayer("Cut"))
-      {
+      { 
+         GameManager._instance.DamageEffectWing();
          Destroy(other.gameObject.GetComponent<MeshCollider>());
          parent = GameObject.FindWithTag("Chest");
          refObj = GameObject.FindWithTag("refObj");

@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
             else if (isFly)
             {
                 Physics.gravity = new Vector3(0, 0, 0);
-                transform.position += new Vector3(horizontal * Time.deltaTime * horSpeed,
+                transform.localPosition += new Vector3(horizontal * Time.deltaTime * horSpeed,
                     (vertical+fakeGravity) * Time.deltaTime * horSpeed, 0);
                 transform.rotation=Quaternion.Lerp(transform.rotation, Quaternion.Euler(-vertical*horSpeed*3,0,-horizontal*horSpeed*3),Time.deltaTime);
               

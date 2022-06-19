@@ -48,6 +48,13 @@ public class CollisionController : MonoBehaviour
                 Destroy(collision.gameObject);
             StartCoroutine(Wait());
             
+        }else if (collision.gameObject.tag == "obstacle")
+        {
+            Destroy(collision.gameObject.GetComponent<MeshCollider>());
+            collision.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,4f,3f));
+            PlayerMovement._instance.movementSpeed--;
+
+            
         }
     }
 
