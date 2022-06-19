@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFinish: 0
+  crossSectionMat: {fileID: 2100000, guid: ab8ca67554f3342859528f6ac9c9e2be, type: 2}
 --- !u!4 &59065092
 Transform:
   m_ObjectHideFlags: 0
@@ -1339,7 +1340,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mat: {fileID: 0}
-  mat1: {fileID: 2100000, guid: ab8ca67554f3342859528f6ac9c9e2be, type: 2}
   otherObjTransform: {x: 0, y: 0, z: 0}
   refObj: {fileID: 1848617763}
 --- !u!114 &1972163171
@@ -1354,6 +1354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad9d2bca5b2246fdbfaf59d979969d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleLeft: {fileID: 0}
 --- !u!1 &2031705903
 GameObject:
   m_ObjectHideFlags: 0
@@ -3631,7 +3632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7085450464603356621, guid: 59e59cc3640384451b37856a1fe8b7b7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.4217424
+      value: -0.8217425
       objectReference: {fileID: 0}
     - target: {fileID: 7085450464603356621, guid: 59e59cc3640384451b37856a1fe8b7b7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3639,7 +3640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7085450464603356621, guid: 59e59cc3640384451b37856a1fe8b7b7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 70.08149
+      value: 15.28149
       objectReference: {fileID: 0}
     - target: {fileID: 7085450464603356621, guid: 59e59cc3640384451b37856a1fe8b7b7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3747,7 +3748,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6525078502933444570, guid: 4e9ea57acc8c04a0686ccd8e5a53db1b, type: 3}
       propertyPath: horSpeed
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -6525078502933444570, guid: 4e9ea57acc8c04a0686ccd8e5a53db1b, type: 3}
       propertyPath: joystick
@@ -3776,6 +3777,14 @@ PrefabInstance:
     - target: {fileID: 4728569967487681351, guid: 4e9ea57acc8c04a0686ccd8e5a53db1b, type: 3}
       propertyPath: m_Constraints
       value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269741351454442554, guid: 4e9ea57acc8c04a0686ccd8e5a53db1b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6790774987836549689, guid: 4e9ea57acc8c04a0686ccd8e5a53db1b, type: 3}
+      propertyPath: m_TagString
+      value: particleTurbo
       objectReference: {fileID: 0}
     - target: {fileID: 8009871504758565434, guid: 4e9ea57acc8c04a0686ccd8e5a53db1b, type: 3}
       propertyPath: m_Materials.Array.data[0]

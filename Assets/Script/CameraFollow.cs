@@ -14,16 +14,12 @@ public class CameraFollow : MonoBehaviour
         Slerp,
     }
  
-    //Populate in Inspector with you players transform
     public Transform    TargetToFollow;
  
-    //The distance the camera will be from the player
     public Vector3      FollowOffset        = new Vector3(0, 0, -10);
  
-    //How quickly the camera moves
     public float        FollowSpeed         = 5f;
  
-    //How the camera will follow
     public FollowType   FollowMethod        = FollowType.Lerp;
  
     private Transform   _cameraTransform;

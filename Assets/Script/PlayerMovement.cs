@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -62,54 +63,24 @@ public class PlayerMovement : MonoBehaviour
                 Physics.gravity = new Vector3(0, 0, 0);
                 transform.position += new Vector3(horizontal * Time.deltaTime * horSpeed,
                     (vertical+fakeGravity) * Time.deltaTime * horSpeed, 0);
-                if (horizontal < 0)
-                {
-                    transform.rotation = Quaternion.Lerp(transform.rotation,
-                        Quaternion.Euler(0, 0, 10),
-                        Time.deltaTime * 3);
-                }
-                else if (horizontal > 0)
-                {
-                    transform.rotation = Quaternion.Lerp(transform.rotation,
-                        Quaternion.Euler(0, 0, -10),
-                        Time.deltaTime * 3);
-                }
-            }else if (Input.touchCount == 0)
+                transform.rotation=Quaternion.Lerp(transform.rotation, Quaternion.Euler(-vertical*horSpeed*3,0,-horizontal*horSpeed*3),Time.deltaTime);
+              
+            }else 
             {
                 transform.rotation=Quaternion.Lerp(transform.rotation,
                     Quaternion.Euler(0,0,0),
                     Time.deltaTime*2);
+                GameObject.FindWithTag("Chest").transform.rotation=Quaternion.Lerp(GameObject.FindWithTag("Chest").transform.rotation,Quaternion.Euler(10,180,0),Time.deltaTime*3 );
             }
-                         
+
+            
+
+
+
+
        
             
-        /*transform.Translate(Vector3.forward * Time.deltaTime * movementSpeed);
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3f, 3f),
-            transform.position.y,
-            transform.position.z);
-        if (Input.touchCount > 0)
-        {
-            theTouch = Input.GetTouch(0);
-            if (theTouch.phase == TouchPhase.Moved)
-            {
-                transform.position = new Vector3(
-                    transform.position.x + theTouch.deltaPosition.normalized.x * Time.deltaTime * horSpeed,
-                    transform.position.y, transform.position.z);
-                
-               if(theTouch.deltaPosition.x<0) transform.rotation=Quaternion.Lerp(transform.rotation,
-                    Quaternion.Euler(0,-6,0),
-                    Time.deltaTime*7);
-               else if(theTouch.deltaPosition.x>0) transform.rotation=Quaternion.Lerp(transform.rotation,
-                   Quaternion.Euler(0,6,0),
-                   Time.deltaTime*7);
-               else transform.rotation=Quaternion.Lerp(transform.rotation,
-                   Quaternion.Euler(0,0,0),
-                   Time.deltaTime*2);
-            }
-            
-        }else transform.rotation=Quaternion.Lerp(transform.rotation,
-            Quaternion.Euler(0,0,0),
-            Time.deltaTime*2);*/
+       
         }
     }
 

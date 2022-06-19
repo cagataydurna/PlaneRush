@@ -3,13 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CollisionController : MonoBehaviour
 {
-    public GameObject wing;
+    public GameObject wing,particleTurbo,chest;
+    
+    
 
      void Start()
      {
+         particleTurbo = GameObject.FindWithTag("particleTurbo");
+         chest = GameObject.FindWithTag("Chest");
+         
      }
 
     private void Update()
@@ -36,7 +42,8 @@ public class CollisionController : MonoBehaviour
         }else if (collision.gameObject.tag == "turbo")
         {
             PlayerMovement._instance.isFly = true;
-            GameObject.FindWithTag("Chest").transform.DORotate(new Vector3(-10,0,0),
+            particleTurbo.GetComponent<ParticleSystem>().Play();
+            chest.transform.DORotate(new Vector3(-10,0,0),
                 2f,  RotateMode.LocalAxisAdd);
                 Destroy(collision.gameObject);
             StartCoroutine(Wait());
@@ -46,10 +53,13 @@ public class CollisionController : MonoBehaviour
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(9f);
         PlayerMovement._instance.isFly = false;
-        transform.DOMoveY(1, 2f, false);
+        transform.DOMoveY(1, 2f, false).OnStepComplete(()=>particleTurbo.GetComponent<ParticleSystem>().Stop()
+            );
     }
+
+    
 
     
 }

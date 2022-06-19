@@ -12,6 +12,9 @@ TagManager:
   - ramp
   - gas
   - turbo
+  - particleLeft
+  - particleTurbo
+  - particleRight
   layers:
   - Default
   - TransparentFX
