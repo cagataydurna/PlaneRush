@@ -10,6 +10,8 @@ TagManager:
   - obstacle
   - collectableWing
   - ramp
+  - gas
+  - turbo
   layers:
   - Default
   - TransparentFX

@@ -26,27 +26,30 @@ public class CollisionController : MonoBehaviour
             Destroy(collision.gameObject);
         }else if (collision.gameObject.tag == "ramp")
         {
-            Physics.gravity = new Vector3(0, 1f, 0);
-            transform.DOMoveY(10, 4f, false).OnStepComplete(()=>ToGround());
-            transform.DORotate(new Vector3(5f, 0, 0), 4f,
-                RotateMode.FastBeyond360).OnStepComplete(() => ToFallAxis()).OnStepComplete(() => ToFixAxis());
+            Physics.gravity = new Vector3(0, 0f, 0);
+            transform.DOMoveY(10, 2f, false);
+
+        }else if (collision.gameObject.tag=="gas")
+        {
+            PlayerMovement._instance.movementSpeed++;
+            Destroy(collision.gameObject);
+        }else if (collision.gameObject.tag == "turbo")
+        {
+            PlayerMovement._instance.isFly = true;
+            GameObject.FindWithTag("Chest").transform.DORotate(new Vector3(-10,0,0),
+                2f,  RotateMode.LocalAxisAdd);
+                Destroy(collision.gameObject);
+            StartCoroutine(Wait());
+            
         }
     }
 
-    void ToGround()
+    IEnumerator Wait()
     {
-        transform.DOMoveY(1, 5f, false);
-        Physics.gravity = new Vector3(0, -9.81f, 0);
+        yield return new WaitForSeconds(5f);
+        PlayerMovement._instance.isFly = false;
+        transform.DOMoveY(1, 2f, false);
     }
 
-    void ToFallAxis()
-    {
-        transform.transform.DORotate(new Vector3(-3f, 0, 0), 4f,
-            RotateMode.FastBeyond360);
-    }
-
-    void ToFixAxis()
-    {
-        transform.DORotate(new Vector3(0, 0, 0), 1f, RotateMode.FastBeyond360);
-    }
+    
 }

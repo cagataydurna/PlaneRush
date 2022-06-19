@@ -48,7 +48,7 @@ public class Cut : MonoBehaviour
 
    private void Update()
    {
-      
+
    }
 
    public SlicedHull Cutt(GameObject obj, Material crossSection)
@@ -70,7 +70,7 @@ public class Cut : MonoBehaviour
    {                                                                            
       obj.transform.position = this.gameObject.transform.position;
       obj.transform.rotation = this.gameObject.transform.rotation;
-      obj.transform.localScale = new Vector3(0.4f,0.01258f,1.105f);
+      obj.transform.localScale = this.gameObject.transform.lossyScale;
       obj.AddComponent<Rigidbody>();
       
 
@@ -79,7 +79,8 @@ public class Cut : MonoBehaviour
    {                                                                            
       obj.transform.position = this.gameObject.transform.position;
       obj.transform.rotation = this.gameObject.transform.rotation;
-      obj.transform.localScale = new Vector3(0.4f,0.01258f,1.105f);
+      obj.transform.localScale = this.gameObject.transform.lossyScale;
+      obj.AddComponent<WingTest>();
       obj.transform.SetParent(parent.transform);
       
    }

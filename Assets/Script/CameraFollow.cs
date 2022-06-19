@@ -7,31 +7,51 @@ using Vector3 = UnityEngine.Vector3;
 
 public class CameraFollow : MonoBehaviour
 {
-    public GameObject player;
-    public static CameraFollow _instance;
-    public Vector3 offSet;
-    public Transform TargetObject;
-    public float MoveSmoothTime = 0.3F;
-    public float RotationSpeed = 6f;
-    public Vector3 Offset = new Vector3(0f, 15f, 0f);
-
-    public bool Enabled = true;
-
-    private Transform myTransform;
-    private Vector3 velocity = Vector3.zero;
-
-    void Awake()
+    public enum FollowType
     {
-        myTransform = this.transform;
+        Rigid,
+        Lerp,
+        Slerp,
     }
-
-    void FixedUpdate()
+ 
+    //Populate in Inspector with you players transform
+    public Transform    TargetToFollow;
+ 
+    //The distance the camera will be from the player
+    public Vector3      FollowOffset        = new Vector3(0, 0, -10);
+ 
+    //How quickly the camera moves
+    public float        FollowSpeed         = 5f;
+ 
+    //How the camera will follow
+    public FollowType   FollowMethod        = FollowType.Lerp;
+ 
+    private Transform   _cameraTransform;
+    private Vector3     _targetPos;
+ 
+    private void Start()
     {
-        if (TargetObject != null && Enabled)
+        if(TargetToFollow == null)
+            Debug.LogError($"{nameof(TargetToFollow)} is null", this);
+ 
+        _cameraTransform = transform;
+    }
+ 
+    private void LateUpdate()
+    {
+        switch (FollowMethod)
         {
-            Vector3 targetPosition = TargetObject.TransformPoint(Offset);
-            myTransform.position = Vector3.SmoothDamp(myTransform.position, targetPosition, ref velocity, MoveSmoothTime);
-            
+            case FollowType.Rigid:
+                _targetPos = TargetToFollow.position + FollowOffset;
+                break;
+            case FollowType.Lerp:
+                _targetPos = Vector3.Lerp(_cameraTransform.position , TargetToFollow.position + FollowOffset, Time.deltaTime * FollowSpeed);
+                break;
+            case FollowType.Slerp:
+                _targetPos = Vector3.Slerp(_cameraTransform.position, TargetToFollow.position + FollowOffset, Time.deltaTime * FollowSpeed);
+                break;
         }
+ 
+        _cameraTransform.position = _targetPos;
     }
 }
