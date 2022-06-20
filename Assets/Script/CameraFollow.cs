@@ -13,6 +13,8 @@ public class CameraFollow : MonoBehaviour
         Lerp,
         Slerp,
     }
+
+    public static CameraFollow _instance;
  
     public Transform    TargetToFollow;
  
@@ -29,7 +31,7 @@ public class CameraFollow : MonoBehaviour
     {
         if(TargetToFollow == null)
             Debug.LogError($"{nameof(TargetToFollow)} is null", this);
- 
+        if (_instance == null) _instance = this;
         _cameraTransform = transform;
     }
  

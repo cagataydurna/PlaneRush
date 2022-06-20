@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class WingTest : MonoBehaviour
     private GameObject player;
     public GameObject particleLeft;
     
+    
     void Start()
     {
         if (_instance == null) _instance = this;
@@ -16,6 +18,11 @@ public class WingTest : MonoBehaviour
 
     void Update()
     {
+        if (this.gameObject.GetComponent<Renderer>().localBounds.size.z/2+Math.Abs(this.gameObject.GetComponent<Renderer>().localBounds.center.x) > 3)
+            CameraFollow._instance.FollowOffset += new Vector3(0,
+                this.gameObject.GetComponent<Renderer>().localBounds.size.z,
+                this.gameObject.GetComponent<Renderer>().localBounds.size.z);
+        
 
         
 
