@@ -8626,6 +8626,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -6525078502933444570, guid: 4e9ea57acc8c04a0686ccd8e5a53db1b, type: 3}
+      propertyPath: flySpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -6525078502933444570, guid: 4e9ea57acc8c04a0686ccd8e5a53db1b, type: 3}
       propertyPath: horSpeed
       value: 33.36
       objectReference: {fileID: 0}
@@ -8657,6 +8661,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: 61e04a2867e7245bfa8c323ce65c4931, type: 2}
+    - target: {fileID: 4728569967487681351, guid: 4e9ea57acc8c04a0686ccd8e5a53db1b, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4728569967487681351, guid: 4e9ea57acc8c04a0686ccd8e5a53db1b, type: 3}
       propertyPath: m_Constraints
       value: 96
@@ -8845,11 +8853,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7484049848052243149, guid: ead5c7d40880742948c32145a0bfede4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.443339
+      value: 1.79
       objectReference: {fileID: 0}
     - target: {fileID: 7484049848052243149, guid: ead5c7d40880742948c32145a0bfede4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.756615
+      value: -28.55
       objectReference: {fileID: 0}
     - target: {fileID: 7484049848052243149, guid: ead5c7d40880742948c32145a0bfede4, type: 3}
       propertyPath: m_LocalRotation.w

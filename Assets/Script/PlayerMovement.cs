@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float horSpeed=5f;
     public bool isFly;
     public int fakeGravity = 0;
+    public float flySpeed = 5f;
 
 
     private void Awake()
@@ -39,12 +40,12 @@ public class PlayerMovement : MonoBehaviour
                 //if statement aç 0dan küçük ve 0 dan büyük horizon değerleri için lerp gir
                 
                 transform.position += transform.forward * Time.deltaTime * movementSpeed;
-
-               if(theTouch.deltaPosition.x>5 || theTouch.deltaPosition.x<-5) {
+Debug.Log(theTouch.deltaPosition);
+               if(theTouch.deltaPosition.x>-5 || theTouch.deltaPosition.x<5) {
                     var rot1 = new Vector3(0, Mathf.Clamp(theTouch.deltaPosition.normalized.x * horSpeed * 10, -30, 30),
                         0);
                     transform.rotation =
-                        Quaternion.Lerp(transform.rotation, Quaternion.Euler(rot1), Time.deltaTime * 3);
+                        Quaternion.Lerp(transform.rotation, Quaternion.Euler(rot1), Time.deltaTime );
                 }
                else
                {
@@ -59,9 +60,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 transform.Translate(Vector3.forward * Time.deltaTime * movementSpeed);
                 Physics.gravity = new Vector3(0, 0, 0);
-                transform.localPosition += new Vector3(horizontal * Time.deltaTime * horSpeed,
-                    (vertical+fakeGravity) * Time.deltaTime * horSpeed, 0);
-                transform.rotation=Quaternion.Lerp(transform.rotation, Quaternion.Euler(-vertical*horSpeed*3,0,-horizontal*horSpeed*3),Time.deltaTime);
+                transform.localPosition += new Vector3(horizontal * Time.deltaTime * flySpeed,
+                    (vertical+fakeGravity) * Time.deltaTime * flySpeed, 0);
+                transform.rotation=Quaternion.Lerp(transform.rotation, Quaternion.Euler(Mathf.Clamp(-vertical*8,-15,15),0,
+                    Mathf.Clamp(-horizontal * 8,-10,10)),Time.deltaTime);
+                if(Input.touchCount==0) FixRotation();
               
             }else 
             {
@@ -73,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
                 transform.rotation=Quaternion.Lerp(transform.rotation,
                     Quaternion.Euler(0,0,0),
                     Time.deltaTime*2);
-                GameObject.FindWithTag("Chest").transform.rotation=Quaternion.Lerp(GameObject.FindWithTag("Chest").transform.rotation,Quaternion.Euler(10,180,0),Time.deltaTime*5 );
+                GameObject.FindWithTag("Chest").transform.rotation=Quaternion.Lerp(GameObject.FindWithTag("Chest").transform.rotation,Quaternion.Euler(10,180,0),Time.deltaTime*4 );
             }
 
         }

@@ -41,12 +41,14 @@ public class CollisionController : MonoBehaviour
             Destroy(collision.gameObject);
         }else if (collision.gameObject.tag == "turbo")
         {
+            Destroy(collision.gameObject);
             PlayerMovement._instance.isFly = true;
             particleTurbo.GetComponent<ParticleSystem>().Play();
             chest.transform.DORotate(new Vector3(-10,0,0),
                 2f,  RotateMode.LocalAxisAdd);
                 Destroy(collision.gameObject);
-            StartCoroutine(Wait());
+                //transform.DORotate(new Vector3(0, 0, 0), 2f, RotateMode.Fast);
+                StartCoroutine(Wait());
             
         }else if (collision.gameObject.tag == "obstacle")
         {
