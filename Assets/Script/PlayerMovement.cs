@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public float flySpeed = 5f;
 
 
-    private void Awake()
+     void Awake()
     {
         if (_instance == null)
         {
@@ -24,8 +24,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+     void FixedUpdate()
     {
+
         
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3f, 3f),
             transform.position.y,
@@ -33,12 +34,11 @@ public class PlayerMovement : MonoBehaviour
         
         float horizontal = joystick.Horizontal;
         float vertical = joystick.Vertical;
-
             if (Input.touchCount > 0 && !isFly)
             {
                 theTouch = Input.GetTouch(0);
-                //if statement aç 0dan küçük ve 0 dan büyük horizon değerleri için lerp gir
-                
+                Physics.gravity = new Vector3(0, -9.81f, 0);
+
                 transform.position += transform.forward * Time.deltaTime * movementSpeed;
 Debug.Log(theTouch.deltaPosition);
                if(theTouch.deltaPosition.x>-5 || theTouch.deltaPosition.x<5) {
@@ -71,14 +71,21 @@ Debug.Log(theTouch.deltaPosition);
                FixRotation();
             }
 
-            void FixRotation()
-            {
-                transform.rotation=Quaternion.Lerp(transform.rotation,
-                    Quaternion.Euler(0,0,0),
-                    Time.deltaTime*2);
-                GameObject.FindWithTag("Chest").transform.rotation=Quaternion.Lerp(GameObject.FindWithTag("Chest").transform.rotation,Quaternion.Euler(10,180,0),Time.deltaTime*4 );
-            }
+           
 
         }
+     public void FixRotation()
+     {
+         Physics.gravity = new Vector3(0, -9.81f, 0);
+
+         transform.rotation=Quaternion.Lerp(transform.rotation,
+             Quaternion.Euler(0,0,0),
+             Time.deltaTime*2);
+         GameObject.FindWithTag("Chest").transform.rotation=Quaternion.Lerp(GameObject.FindWithTag("Chest").transform.rotation,Quaternion.Euler(10,180,0),Time.deltaTime*4 );
+         if (transform.position.y > 0.84)
+         {
+             transform.DOMoveY(0.80f, 1f, false);
+         }
+     }
     }
 

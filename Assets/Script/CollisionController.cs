@@ -64,8 +64,10 @@ public class CollisionController : MonoBehaviour
     {
         yield return new WaitForSeconds(9f);
         PlayerMovement._instance.isFly = false;
-        transform.DOMoveY(1, 2f, false).OnStepComplete(()=>particleTurbo.GetComponent<ParticleSystem>().Stop()
-            );
+        particleTurbo.GetComponent<ParticleSystem>().Stop();
+        PlayerMovement._instance.FixRotation();
+        transform.DOMoveY(0.84f, 4f, false);
+
     }
 
     
