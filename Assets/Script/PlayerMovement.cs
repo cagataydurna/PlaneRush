@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
     public static PlayerMovement _instance;
     public Touch theTouch;
     public DynamicJoystick joystick;
@@ -38,8 +39,10 @@ public class PlayerMovement : MonoBehaviour
         float vertical = joystick.Vertical;
             if (Input.touchCount > 0 && !isFly)
             {
+            
                 if (transform.position.y > 0.84)
                 {
+                
                     transform.DOMoveY(0.80f, 1f, false);
                 }
                 theTouch = Input.GetTouch(0);
@@ -47,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
                 transform.position += transform.forward * Time.deltaTime * movementSpeed;
                if(theTouch.deltaPosition.x>-5 || theTouch.deltaPosition.x<5) {
+                
                     var rot1 = new Vector3(0, Mathf.Clamp(theTouch.deltaPosition.normalized.x * horSpeed * 10, -30, 30),
                         0);
                     transform.rotation =
