@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager _instance;
 
     public Animator LayoutAnimator;
+    public Image FillBar;
+    public GameObject Ramp;
     public GameObject Settings_Open;
     public GameObject Settings_Close;
     public GameObject Sound_On;
@@ -17,6 +20,20 @@ public class UIManager : MonoBehaviour
     public GameObject Shop;
     public GameObject Ads;
     public GameObject Panel;
+    public GameObject TapToPlay;
+
+    //Finish Screen Objects
+    public GameObject FinishScreenObject;
+    public GameObject Background;
+    public GameObject Backgroundwin;
+    public GameObject Complete;
+    public GameObject NoThanks;
+    public GameObject RadialShine;
+    private bool radial_shine;
+    public GameObject Coin;
+    public GameObject Claim;
+    public GameObject Gift;
+
     public bool isStarted;
 
     public void Awake()
@@ -39,7 +56,15 @@ public class UIManager : MonoBehaviour
             PlayerPrefs.SetInt("Vibration", 0);
         }
     }
-    
+    public void Update()
+    {
+        if(radial_shine == true)
+        { 
+        RadialShine.GetComponent<RectTransform>().Rotate(new Vector3(0, 0, 15f * Time.deltaTime));
+        }
+        FillBar.fillAmount = (PlayerMovement._instance.transform.position.z) / (Ramp.transform.position.z);
+    }
+
 
     public void CloseUI()
     {
@@ -53,7 +78,34 @@ public class UIManager : MonoBehaviour
         Vibration_Off.SetActive(false);
         Information.SetActive(false);
         Panel.SetActive(false);
+        TapToPlay.SetActive(false);
         Time.timeScale = 1f;
+
+    }
+
+    public void FinishScreen()
+    {
+        StartCoroutine("FinishScreenLaunch");
+    }
+
+    public IEnumerator FinishScreenLaunch()
+    {
+        Time.timeScale = 0.6f;
+        radial_shine = true;
+        FinishScreenObject.SetActive(true);
+        Background.SetActive(true);
+        yield return new WaitForSecondsRealtime(0.8f);
+        Backgroundwin.SetActive(true);
+        yield return new WaitForSecondsRealtime(0.8f);
+        Complete.SetActive(true);
+        RadialShine.SetActive(true);
+        Gift.SetActive(true);
+        Coin.SetActive(true);
+        yield return new WaitForSecondsRealtime(0.4f);
+        Claim.SetActive(true);
+        yield return new WaitForSecondsRealtime(3);
+        NoThanks.SetActive(true);
+
 
     }
 
