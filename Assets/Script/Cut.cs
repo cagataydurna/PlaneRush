@@ -21,6 +21,8 @@ public class Cut : MonoBehaviour
    {
       if (other.gameObject.layer == LayerMask.NameToLayer("Cut"))
       { 
+         //Kesme sesinin çalışacağı yer 
+         GameManager._instance.VibrationPopGame();
          GameManager._instance.DamageEffectWing();
          Destroy(other.gameObject.GetComponent<MeshCollider>());
          parent = GameObject.FindWithTag("Chest");

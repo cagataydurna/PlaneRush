@@ -91,9 +91,9 @@ public class PlayerMovement : MonoBehaviour
              Quaternion.Euler(0,0,0),
              Time.deltaTime*2);
          GameObject.FindWithTag("Chest").transform.rotation=Quaternion.Lerp(GameObject.FindWithTag("Chest").transform.rotation,Quaternion.Euler(10,180,0),Time.deltaTime*4 );
-         if (transform.position.y > 0.84&& !isFly)
+         if (transform.position.y > 0.84&& !isFly&& transform.position.y<0.81f)
          {
-             transform.DOMoveY(0.80f, 1f, false);
+             transform.DOMoveY(0.80f, 0.1f, false);
          }
      }
     }

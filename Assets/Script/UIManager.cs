@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour
         {
             _instance = this;
         }
-        Time.timeScale = 0;
+        Time.timeScale = 1;
     }
 
     public void Start()

@@ -373,6 +373,7 @@ MonoBehaviour:
   sizeOfWing: 0
   isFailFinish: 0
   finishPanelCount: 0
+  isVibrationOff: 0
 --- !u!4 &59065092
 Transform:
   m_ObjectHideFlags: 0
@@ -1721,6 +1722,10 @@ MonoBehaviour:
   Vibration_On: {fileID: 602521716}
   Vibration_Off: {fileID: 1371268572}
   Information: {fileID: 717743387}
+  Shop: {fileID: 0}
+  Ads: {fileID: 0}
+  Panel: {fileID: 0}
+  isStarted: 0
 --- !u!1001 &511276418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2107,6 +2112,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &600367261 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 148380490659587723, guid: 4e9ea57acc8c04a0686ccd8e5a53db1b, type: 3}
+  m_PrefabInstance: {fileID: 6383145305199960948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &600367263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600367261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992bb5ee6f7e74e6aa165108559d0252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &602521716
 GameObject:
   m_ObjectHideFlags: 0
