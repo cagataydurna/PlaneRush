@@ -14,8 +14,9 @@ public class GameManager : MonoBehaviour
     public bool isFailFinish;//çarpınca oyun bitişi
     GameObject blowParticle,chest;
     public int finishPanelCount;//oyun sonundaki her toplanan panelde artar
+    public bool isVibrationOff;
     void Awake()
-    {
+    {   
         isFinish = false;
         if (_instance == null) _instance = this;
         GameObject.FindWithTag("particleLeft").GetComponent<ParticleSystem>().Stop();
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
         blowParticle = GameObject.FindGameObjectWithTag("blowParticle");
         blowParticle.SetActive(false);
         chest=GameObject.FindWithTag("Chest");
+        Vibration.Init();
 
     }
 
@@ -49,5 +51,11 @@ public class GameManager : MonoBehaviour
     {
         wingMat.DOColor(Color.red, 0.2f).OnStepComplete(()=> wingMat.DOColor(wingColor, 0.2f));
        ;
+    }
+
+    public void VibrationPopGame()
+    {
+        if(!isVibrationOff)Vibration.VibratePop();
+        
     }
 }

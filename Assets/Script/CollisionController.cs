@@ -31,6 +31,8 @@ public class CollisionController : MonoBehaviour
             wing = GameObject.FindGameObjectWithTag("wing");
             wing.transform.localScale+=new Vector3(0,0,0.4f);
             Destroy(collision.gameObject);
+            GameManager._instance.VibrationPopGame();
+
         }else if (collision.gameObject.tag == "ramp")//Oyun bitişi çizgisi
         {
             Physics.gravity = new Vector3(0, 0f, 0);
@@ -41,11 +43,15 @@ public class CollisionController : MonoBehaviour
             GameManager._instance.isFinish = true;
             PlayerMovement._instance.isFly = true;
             PlayerMovement._instance.clampValue = 6f;
+            GameManager._instance.VibrationPopGame();
+
 
         }else if (collision.gameObject.tag=="gas")
         {
             PlayerMovement._instance.movementSpeed++;
             Destroy(collision.gameObject);
+            GameManager._instance.VibrationPopGame();
+
         }else if (collision.gameObject.tag == "turbo")
         {
             Destroy(collision.gameObject);
@@ -56,12 +62,16 @@ public class CollisionController : MonoBehaviour
                 Destroy(collision.gameObject);
                 //transform.DORotate(new Vector3(0, 0, 0), 2f, RotateMode.Fast);
                 StartCoroutine(Wait());
+                GameManager._instance.VibrationPopGame();
+
             
         }else if (collision.gameObject.tag == "obstacle")
         {
             Destroy(collision.gameObject.GetComponent<MeshCollider>());
             collision.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,4f,3f));
             PlayerMovement._instance.movementSpeed--;
+            GameManager._instance.VibrationPopGame();
+
         }else if (collision.gameObject.tag == "finishPanel")
         {
             GameManager._instance.finishPanelCount++;
@@ -70,10 +80,13 @@ public class CollisionController : MonoBehaviour
             collision.gameObject.transform.GetChild(1).GameObject().SetActive(false);
             Destroy(collision.gameObject.GetComponent<MeshCollider>());
             GameObject.FindGameObjectWithTag("wing").transform.localScale-=new Vector3(0,0,0.4f);
+            GameManager._instance.VibrationPopGame();
+
 
         }else if (collision.gameObject.tag == "finishGround")
         {
             GameManager._instance.isFailFinish = true;
+            GameManager._instance.VibrationPopGame();
             
         }
     }
