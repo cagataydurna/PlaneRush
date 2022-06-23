@@ -67,6 +67,7 @@ public class Cut : MonoBehaviour
       obj.GetComponent<MeshCollider>().convex = true;
       obj.GetComponent<MeshCollider>().isTrigger = true;
       obj.AddComponent<Cut>();
+      GameManager._instance.sizeOfWing=obj.GetComponent<Renderer>().localBounds.size.z;
       obj.tag = "wing";
    }
 

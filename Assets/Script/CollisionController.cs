@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -30,10 +31,16 @@ public class CollisionController : MonoBehaviour
             wing = GameObject.FindGameObjectWithTag("wing");
             wing.transform.localScale+=new Vector3(0,0,0.4f);
             Destroy(collision.gameObject);
-        }else if (collision.gameObject.tag == "ramp")
+        }else if (collision.gameObject.tag == "ramp")//Oyun bitişi çizgisi
         {
             Physics.gravity = new Vector3(0, 0f, 0);
-            transform.DOMoveY(10, 2f, false);
+            transform.DORotate(new Vector3(0, 0, 0), 1f, RotateMode.Fast);
+            collision.gameObject.GetComponent<BoxCollider>().enabled = false;
+            transform.DOMoveY(5, 1, false);
+
+            GameManager._instance.isFinish = true;
+            PlayerMovement._instance.isFly = true;
+            PlayerMovement._instance.clampValue = 6f;
 
         }else if (collision.gameObject.tag=="gas")
         {
@@ -55,7 +62,18 @@ public class CollisionController : MonoBehaviour
             Destroy(collision.gameObject.GetComponent<MeshCollider>());
             collision.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,4f,3f));
             PlayerMovement._instance.movementSpeed--;
+        }else if (collision.gameObject.tag == "finishPanel")
+        {
+            GameManager._instance.finishPanelCount++;
+            collision.gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+            Destroy(collision.gameObject.GetComponent<MeshRenderer>());
+            collision.gameObject.transform.GetChild(1).GameObject().SetActive(false);
+            Destroy(collision.gameObject.GetComponent<MeshCollider>());
+            GameObject.FindGameObjectWithTag("wing").transform.localScale-=new Vector3(0,0,0.4f);
 
+        }else if (collision.gameObject.tag == "finishGround")
+        {
+            GameManager._instance.isFailFinish = true;
             
         }
     }

@@ -27,10 +27,10 @@ public class WingTest : MonoBehaviour
         
 
         if(PlayerMovement._instance.isFly&& GameManager._instance.isFinish){
-            if (this.gameObject.GetComponent<Renderer>().localBounds.center.z < 0)
+            if (this.gameObject.GetComponent<Renderer>().localBounds.center.z < 0.3)
             {
                 player = GameObject.FindWithTag("Player");
-                PlayerMovement._instance.fakeGravity = -1;
+                PlayerMovement._instance.fakeGravity = -0.3f;
                 particleLeft.GetComponent<ParticleSystem>().Play();
                 particleLeft.transform.localPosition = new Vector3(this.gameObject.GetComponent<Renderer>().localBounds.center.x - this.gameObject.GetComponent<Renderer>().localBounds.size.z
                     , 2.3f,
@@ -38,10 +38,10 @@ public class WingTest : MonoBehaviour
                 player.transform.Rotate(Vector3.back * Time.deltaTime * transform.localScale.z * 5);
 
             }
-            else if (this.gameObject.GetComponent<Renderer>().localBounds.center.z > 0)
+            else if (this.gameObject.GetComponent<Renderer>().localBounds.center.z > -0.3)
             {
                 player = GameObject.FindWithTag("Player");
-                PlayerMovement._instance.fakeGravity = -1;
+                PlayerMovement._instance.fakeGravity = -0.3f;
                 particleLeft.GetComponent<ParticleSystem>().Play();
 
                 particleLeft.transform.localPosition = new Vector3(this.gameObject.GetComponent<Renderer>().localBounds.center.x + (this.gameObject.GetComponent<Renderer>().localBounds.size.z)

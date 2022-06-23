@@ -89,7 +89,7 @@ SubShader {
 	Tags
 	{
 		"Queue"="Transparent"
-		"IgnoreProjector"="True"
+		"IgnoreProjector"="False"
 		"RenderType"="Transparent"
 	}
 
@@ -103,7 +103,7 @@ SubShader {
 	}
 
 	Cull [_CullMode]
-	ZWrite Off
+	ZWrite on
 	Lighting Off
 	Fog { Mode Off }
 	ZTest [unity_GUIZTestMode]
