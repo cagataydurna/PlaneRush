@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 797019528067370021}
   - component: {fileID: 8503823068330792070}
   - component: {fileID: 17467717838471665}
+  - component: {fileID: 6007115491041683977}
   m_Layer: 0
   m_Name: Plane.005
   m_TagString: Untagged
@@ -185,6 +186,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6007115491041683977
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983197597293858285}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8302102485596996044, guid: 826c1620a3a3d9d438eca75cb27c8259, type: 3}
 --- !u!1 &1186210324428092174
 GameObject:
   m_ObjectHideFlags: 0
@@ -30704,9 +30719,10 @@ GameObject:
   - component: {fileID: 5374914198699427902}
   - component: {fileID: 7084202488973773356}
   - component: {fileID: 2248333214625838615}
+  - component: {fileID: 8220495012653004161}
   m_Layer: 0
   m_Name: Plane.021
-  m_TagString: Untagged
+  m_TagString: finishGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30778,6 +30794,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8220495012653004161
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736921630269591753}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -150120879314253014, guid: 826c1620a3a3d9d438eca75cb27c8259, type: 3}
 --- !u!1 &1771715292984709066
 GameObject:
   m_ObjectHideFlags: 0
@@ -32561,6 +32591,7 @@ GameObject:
   - component: {fileID: 4104063359590663045}
   - component: {fileID: 4554796803415718278}
   - component: {fileID: 7964570921281521003}
+  - component: {fileID: 7569155068353314932}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -32635,6 +32666,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7569155068353314932
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7127827854808365771}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -462981019419857548, guid: 826c1620a3a3d9d438eca75cb27c8259, type: 3}
 --- !u!1 &7594371190984985363
 GameObject:
   m_ObjectHideFlags: 0
@@ -32815,9 +32860,10 @@ GameObject:
   - component: {fileID: 6005674027110462104}
   - component: {fileID: 3249830193960534114}
   - component: {fileID: 3614445824016993738}
+  - component: {fileID: 753981007602517648}
   m_Layer: 0
   m_Name: Plane.009
-  m_TagString: Untagged
+  m_TagString: finishGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32889,6 +32935,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &753981007602517648
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8093753967864402063}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6968846074178130577, guid: 826c1620a3a3d9d438eca75cb27c8259, type: 3}
 --- !u!1 &8096014845280312032
 GameObject:
   m_ObjectHideFlags: 0
@@ -33233,6 +33293,7 @@ GameObject:
   - component: {fileID: 5672822909610273066}
   - component: {fileID: 6074324723538867870}
   - component: {fileID: 6498828227892332038}
+  - component: {fileID: 6585164015879889380}
   m_Layer: 0
   m_Name: Plane.003
   m_TagString: Untagged
@@ -33307,3 +33368,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6585164015879889380
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9167464578550548757}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7196802604745430461, guid: 826c1620a3a3d9d438eca75cb27c8259, type: 3}

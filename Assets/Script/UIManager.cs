@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     public GameObject Ads;
     public GameObject Panel;
     public GameObject TapToPlay;
+    public Button playButton;
 
     //Finish Screen Objects
     public GameObject FinishScreenObject;
@@ -42,7 +43,7 @@ public class UIManager : MonoBehaviour
         {
             _instance = this;
         }
-        Time.timeScale = 1;
+        Time.timeScale = 0;
     }
 
     public void Start()
@@ -55,6 +56,8 @@ public class UIManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("Vibration", 0);
         }
+        PlayerMovement._instance.isStart = false;
+
     }
     public void Update()
     {
@@ -63,6 +66,10 @@ public class UIManager : MonoBehaviour
         RadialShine.GetComponent<RectTransform>().Rotate(new Vector3(0, 0, 15f * Time.deltaTime));
         }
         FillBar.fillAmount = (PlayerMovement._instance.transform.position.z) / (Ramp.transform.position.z);
+        if (PlayerMovement._instance.isStart)
+        {
+            CloseUI();
+        }
     }
 
 
@@ -79,8 +86,13 @@ public class UIManager : MonoBehaviour
         Information.SetActive(false);
         Panel.SetActive(false);
         TapToPlay.SetActive(false);
-        Time.timeScale = 1f;
 
+    }
+
+    public void PlayButton()
+    {
+        PlayerMovement._instance.isStart = true;
+        Time.timeScale = 1f;
     }
 
     public void FinishScreen()

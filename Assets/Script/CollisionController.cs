@@ -44,6 +44,7 @@ public class CollisionController : MonoBehaviour
             GameManager._instance.isFinish = true;
             PlayerMovement._instance.isFly = true;
             PlayerMovement._instance.clampValue = 6f;
+            CameraFollow._instance.FollowOffset = new Vector3(0, 7f, -15f);
             GameManager._instance.VibrationPopGame();
 
 

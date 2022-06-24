@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public static PlayerMovement _instance;
     public Touch theTouch;
     public DynamicJoystick joystick;
+    public bool isStart;
     public float movementSpeed=5f;
     public float horSpeed=5f;
     public bool isFly;
@@ -37,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         
         float horizontal = joystick.Horizontal;
         float vertical = joystick.Vertical;
-            if (Input.touchCount > 0 && !isFly)
+            if (Input.touchCount > 0 && !isFly&&isStart)
             {
             
                 if (transform.position.y > 0.84)
