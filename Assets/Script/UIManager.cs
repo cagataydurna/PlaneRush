@@ -90,6 +90,7 @@ public class UIManager : MonoBehaviour
 
     public IEnumerator FinishScreenLaunch()
     {
+        
         Time.timeScale = 0.6f;
         radial_shine = true;
         FinishScreenObject.SetActive(true);

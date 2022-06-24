@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
             chest.SetActive(false);
             blowParticle.GetComponent<ParticleSystem>().Play();
             UIManager._instance.FinishScreen();
+            
         }
     }
 

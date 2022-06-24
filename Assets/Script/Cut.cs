@@ -11,6 +11,7 @@ public class Cut : MonoBehaviour
    public Vector3 otherObjTransform;
    private GameObject parent;
    public GameObject refObj;
+   
 
    private void Start()
    {
@@ -20,8 +21,9 @@ public class Cut : MonoBehaviour
    private void OnTriggerEnter(Collider other)
    {
       if (other.gameObject.layer == LayerMask.NameToLayer("Cut"))
-      { 
-         //Kesme sesinin çalışacağı yer 
+      {
+            //Kesme sesinin çalışacağı yer 
+         SoundManager._instance.CutSoundEffect();
          GameManager._instance.VibrationPopGame();
          GameManager._instance.DamageEffectWing();
          Destroy(other.gameObject.GetComponent<MeshCollider>());

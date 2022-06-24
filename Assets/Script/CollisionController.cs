@@ -11,6 +11,7 @@ public class CollisionController : MonoBehaviour
     public GameObject wing,particleTurbo,chest;
     
     
+    
 
      void Start()
      {
@@ -68,6 +69,7 @@ public class CollisionController : MonoBehaviour
         }else if (collision.gameObject.tag == "obstacle")
         {
             //Çarpmanın çalışacağı yer
+            SoundManager._instance.HitSoundEffect();
             Destroy(collision.gameObject.GetComponent<MeshCollider>());
             collision.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,4f,3f));
             PlayerMovement._instance.movementSpeed--;
@@ -76,6 +78,7 @@ public class CollisionController : MonoBehaviour
         }else if (collision.gameObject.tag == "finishPanel")
         {
             //OyunSonuPanel Çalışacağı yer
+            SoundManager._instance.EndGameSoundEffect();
             GameManager._instance.finishPanelCount++;
             collision.gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
             Destroy(collision.gameObject.GetComponent<MeshRenderer>());
