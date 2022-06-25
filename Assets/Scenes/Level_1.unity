@@ -3874,10 +3874,10 @@ RectTransform:
   m_Father: {fileID: 508687506}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 89, y: 63}
-  m_SizeDelta: {x: 220, y: 180}
+  m_AnchorMin: {x: 0, y: 0.381}
+  m_AnchorMax: {x: 0, y: 0.381}
+  m_AnchoredPosition: {x: 71.578, y: -7}
+  m_SizeDelta: {x: 208.0024, y: 170.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &703798632
 MonoBehaviour:
@@ -4385,8 +4385,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 74.21463, y: -211.21472}
-  m_SizeDelta: {x: 118.4293, y: 118.4293}
+  m_AnchoredPosition: {x: 71.578, y: -189}
+  m_SizeDelta: {x: 102.06, y: 102.0581}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &761686945
 MonoBehaviour:
@@ -6903,10 +6903,10 @@ RectTransform:
   m_Father: {fileID: 508687506}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -90, y: 63}
-  m_SizeDelta: {x: 220, y: 180}
+  m_AnchorMin: {x: 1, y: 0.3671017}
+  m_AnchorMax: {x: 1, y: 0.3671017}
+  m_AnchoredPosition: {x: -75, y: 3.5150146}
+  m_SizeDelta: {x: 194.59, y: 159.2105}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1314353925
 MonoBehaviour:
@@ -7843,7 +7843,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 111, y: 2}
+  m_AnchoredPosition: {x: 84, y: 0.000011683}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1542119559
@@ -9246,8 +9246,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 146.5, y: -435.2926}
-  m_SizeDelta: {x: 108.47693, y: 407.823}
+  m_AnchoredPosition: {x: 78.581, y: -391.58}
+  m_SizeDelta: {x: 105.52, y: 396.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1807278902
 MonoBehaviour:
