@@ -87,6 +87,10 @@ public class CollisionController : MonoBehaviour
             Destroy(collision.gameObject.GetComponent<MeshCollider>());
             GameObject.FindGameObjectWithTag("wing").transform.localScale-=new Vector3(0,0,0.4f);
             GameManager._instance.VibrationPopGame();
+            if (GameObject.FindGameObjectWithTag("wing").transform.localScale.z < 0.4f)
+            {
+                GameManager._instance.isFailFinish = true;
+            }
 
 
         }else if (collision.gameObject.tag == "finishGround")
