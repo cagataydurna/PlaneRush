@@ -30,6 +30,12 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void Start()
+    {
+        CoinCalculator(0);
+        Debug.Log(PlayerPrefs.GetInt("coinn"));
+    }
+
     void Update()
     {
          if (isFailFinish)
@@ -41,9 +47,24 @@ public class GameManager : MonoBehaviour
             chest.SetActive(false);
             blowParticle.GetComponent<ParticleSystem>().Play();
             UIManager._instance.FinishScreen();
+            CoinCalculator(30);
+            UIManager._instance.CoinUpdate();
             isFailFinish = false;
             
             
+            
+        }
+    }
+    public void CoinCalculator(int coin)
+    {
+        if (PlayerPrefs.HasKey("coinn"))
+        {
+            int oldCoin = PlayerPrefs.GetInt("coinn");
+            PlayerPrefs.SetInt("coinn", oldCoin + coin);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("coinn", 0);
         }
     }
 

@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+using System;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager _instance;
-
+    
     public Animator LayoutAnimator;
     public Image FillBar;
     public GameObject Ramp;
@@ -23,6 +25,8 @@ public class UIManager : MonoBehaviour
     public GameObject Panel;
     public GameObject TapToPlay;
     public Button playButton;
+    public TextMeshProUGUI CoinText;
+    public TextMeshProUGUI RewardCoinText;
 
     //Finish Screen Objects
     public GameObject FinishScreenObject;
@@ -61,6 +65,8 @@ public class UIManager : MonoBehaviour
         }
         PlayerMovement._instance.isStart = false;
 
+        CoinUpdate();
+
     }
     public void Update()
     {
@@ -91,6 +97,10 @@ public class UIManager : MonoBehaviour
         TapToPlay.SetActive(false);
 
     }
+    public void CoinUpdate()
+    {
+        CoinText.text = PlayerPrefs.GetInt("coinn").ToString();
+    }
 
     public void PlayButton()
     {
@@ -110,12 +120,18 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void AfterRewardScreen()
+    public IEnumerator AfterRewardScreen()
     {
-        
-        NextLevelButton.SetActive(true);
         NoThanks.SetActive(false);
         Claim.SetActive(false);
+        NextLevelButton.SetActive(true);
+        RewardCoinText.gameObject.SetActive(true);
+        for(int i =0; i< 101; i++)
+        {
+            RewardCoinText.text = "+" + i.ToString();
+            yield return new WaitForSeconds(0.0001f);
+        }
+        
 
     }
 
@@ -133,6 +149,7 @@ public class UIManager : MonoBehaviour
         RadialShine.SetActive(true);
         Gift.SetActive(true);
         Coin.SetActive(true);
+        RewardCoinText.gameObject.SetActive(true);
         yield return new WaitForSecondsRealtime(0.4f);
         Claim.SetActive(true);
         yield return new WaitForSecondsRealtime(3);
