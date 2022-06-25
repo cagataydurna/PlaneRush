@@ -34,11 +34,15 @@ public class GameManager : MonoBehaviour
     {
          if (isFailFinish)
          {
-             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
+            AdManager._instance.RequestInterstitial();
+            AdManager._instance.RequestRewardedAd();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
             blowParticle.SetActive(true);
             chest.SetActive(false);
             blowParticle.GetComponent<ParticleSystem>().Play();
             UIManager._instance.FinishScreen();
+            isFailFinish = false;
+            
             
         }
     }

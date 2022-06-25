@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -34,6 +35,8 @@ public class UIManager : MonoBehaviour
     public GameObject Coin;
     public GameObject Claim;
     public GameObject Gift;
+
+    public GameObject NextLevelButton;
 
     public bool isStarted;
 
@@ -100,6 +103,22 @@ public class UIManager : MonoBehaviour
         StartCoroutine("FinishScreenLaunch");
     }
 
+    public void nextScene()
+    {
+        PlayerMovement._instance.isStart = true;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void AfterRewardScreen()
+    {
+        
+        NextLevelButton.SetActive(true);
+        NoThanks.SetActive(false);
+        Claim.SetActive(false);
+
+    }
+
     public IEnumerator FinishScreenLaunch()
     {
         
@@ -118,8 +137,6 @@ public class UIManager : MonoBehaviour
         Claim.SetActive(true);
         yield return new WaitForSecondsRealtime(3);
         NoThanks.SetActive(true);
-
-
     }
 
     public void SettingsOpenButton()
