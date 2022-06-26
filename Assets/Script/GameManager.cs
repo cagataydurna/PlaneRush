@@ -20,8 +20,8 @@ public class GameManager : MonoBehaviour
         isFinish = false;
         if (_instance == null) _instance = this;
         GameObject.FindWithTag("particleLeft").GetComponent<ParticleSystem>().Stop();
-        GameObject.FindWithTag("particleTurbo").GetComponent<ParticleSystem>().Stop();
-        GameObject.FindWithTag("finishPanelParticle").GetComponent<ParticleSystem>().Stop();
+       // GameObject.FindWithTag("particleTurbo").GetComponent<ParticleSystem>().Stop();
+       // GameObject.FindWithTag("finishPanelParticle").GetComponent<ParticleSystem>().Stop();
         sizeOfWing = GameObject.FindGameObjectWithTag("wing").GetComponent<Renderer>().localBounds.size.z;
         blowParticle = GameObject.FindGameObjectWithTag("blowParticle");
         blowParticle.SetActive(false);
@@ -70,8 +70,8 @@ public class GameManager : MonoBehaviour
 
     public void ParticleStop()
     {
-        GameObject.FindWithTag("particleLeft").GetComponent<ParticleSystem>().Stop();
-        GameObject.FindWithTag("particleTurbo").GetComponent<ParticleSystem>().Stop();
+        //GameObject.FindWithTag("particleLeft").GetComponent<ParticleSystem>().Stop();
+        //GameObject.FindWithTag("particleTurbo").GetComponent<ParticleSystem>().Stop();
     }
 
     public void DamageEffectWing()

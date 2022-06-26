@@ -70,15 +70,15 @@ public class UIManager : MonoBehaviour
     }
     public void Update()
     {
-        if(radial_shine == true)
-        { 
-        RadialShine.GetComponent<RectTransform>().Rotate(new Vector3(0, 0, 15f * Time.deltaTime));
-        }
-        FillBar.fillAmount = (PlayerMovement._instance.transform.position.z) / (Ramp.transform.position.z);
-        if (PlayerMovement._instance.isStart)
-        {
-            CloseUI();
-        }
+      //if(radial_shine == true)
+      //{ 
+      //RadialShine.GetComponent<RectTransform>().Rotate(new Vector3(0, 0, 15f * Time.deltaTime));
+      //}
+      //FillBar.fillAmount = (PlayerMovement._instance.transform.position.z) / (Ramp.transform.position.z);
+      //if (PlayerMovement._instance.isStart)
+      //{
+      //    CloseUI();
+      //}
     }
 
 
