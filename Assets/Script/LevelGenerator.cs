@@ -6,15 +6,20 @@ using Random = UnityEngine.Random;
 
 public class LevelGenerator : MonoBehaviour
 {
-    [SerializeField] private int counterRoad = 0;
+    [SerializeField] private int counterRoad = 2;
     public GameObject[] road;
+    public GameObject finalLine;
+    public GameObject finalPanel;
      void Start()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 12; i++)
         {
             Instantiate(road[Random.Range(0, road.Length - 1)], new Vector3(0, 0, counterRoad * 16),
                 Quaternion.Euler(0,90,0));
             counterRoad++;
+            
         }
+
+        
     }
 }
