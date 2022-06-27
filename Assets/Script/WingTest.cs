@@ -12,6 +12,7 @@ public class WingTest : MonoBehaviour
     
     void Start()
     {
+    
         if (_instance == null) _instance = this;
         particleLeft=GameObject.FindWithTag("particleLeft");
     }

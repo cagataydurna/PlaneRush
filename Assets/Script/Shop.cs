@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Shop : MonoBehaviour
 {
 
-
+//GameObject.FindGameObjectWithTag("Chest").GetComponent<MeshRenderer>().material=MATERİAL BURA GELCEK
     //Skills
     public GameObject ParticleEffect1;
     public GameObject ParticleEffect2;
