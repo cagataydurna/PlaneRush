@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
-        CoinCalculator(0);
+        CoinCalculator(10000);
         Debug.Log(PlayerPrefs.GetInt("coinn"));
     }
 
@@ -40,7 +40,11 @@ public class GameManager : MonoBehaviour
     {
          if (isFailFinish)
          {
-            AdManager._instance.RequestInterstitial();
+            if(PlayerPrefs.GetInt("NoAds") == 0)
+            {
+                AdManager._instance.RequestInterstitial();
+            }
+            
             AdManager._instance.RequestRewardedAd();
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
             blowParticle.SetActive(true);

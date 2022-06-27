@@ -68,10 +68,14 @@ public class AdManager : MonoBehaviour
 
     public void ShowInterstitial()
     {
-        if (this.interstitial.IsLoaded())
+        if(PlayerPrefs.GetInt("NoAds") == 0)
         {
-            this.interstitial.Show();
+            if (this.interstitial.IsLoaded())
+            {
+                this.interstitial.Show();
+            }
         }
+        
     }
 
     public void ShowRewardedAd()
@@ -100,4 +104,13 @@ public class AdManager : MonoBehaviour
         UIManager._instance.StartCoroutine("AfterRewardScreen");
         GameManager._instance.CoinCalculator(100);
     }
+
+    public void OnDestroy()
+    {
+        if ( interstitial != null)
+        {
+            interstitial.Destroy();
+        }
+    }
+
 }

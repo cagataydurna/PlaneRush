@@ -63,6 +63,12 @@ public class UIManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("Vibration", 0);
         }
+        
+        if (PlayerPrefs.GetInt("NoAds") == 1)
+        {
+            RemoveAds();
+        }
+
         PlayerMovement._instance.isStart = false;
 
         CoinUpdate();
@@ -97,6 +103,11 @@ public class UIManager : MonoBehaviour
         TapToPlay.SetActive(false);
 
     }
+    public void RemoveAds()
+    {
+        Ads.SetActive(false);
+    }
+
     public void CoinUpdate()
     {
         CoinText.text = PlayerPrefs.GetInt("coinn").ToString();
