@@ -168,6 +168,69 @@ public class Shop : MonoBehaviour
 
 
     }
+
+    public void MaterialItemOpenDeneme(int i)
+    {
+        List<GameObject> materialItemList = new List<GameObject>()
+        {
+            materialItem1,
+            materialItem2,
+            materialItem3,
+            materialItem4,
+            materialItem5,
+            materialItem6
+        };
+        for (int a = 0; a < materialItemList.Count - 1; i++)
+        {
+            materialItemList[a].GetComponent<Image>().sprite = Yellow;
+            if (a == i) materialItemList[a].GetComponent<Image>().sprite = Green;
+        }
+
+        if (i == 0)
+        {
+            GameObject.FindGameObjectWithTag("refObj").GetComponent<MeshRenderer>().material = Material1;
+
+            wingMaterial2.color = new Color32(225, 183, 108, 255);
+            fanMaterial2.color = new Color32(225, 183, 108, 255);
+            PlayerPrefs.SetInt("materialItemSelect", 0);
+        }
+
+        else if (i == 1)
+        {
+            GameObject.FindGameObjectWithTag("refObj").GetComponent<MeshRenderer>().material = Material2;
+            wingMaterial2.color = new Color32(225, 183, 108, 255);
+            fanMaterial2.color = new Color32(225,183,108,255);
+            PlayerPrefs.SetInt("materialItemSelect", 1);
+        }
+        else if (i == 2)
+        {
+            GameObject.FindGameObjectWithTag("refObj").GetComponent<MeshRenderer>().material = Material3;
+            wingMaterial2.color = Color.grey;
+            fanMaterial2.color = new Color32(212, 232, 240, 255);
+            PlayerPrefs.SetInt("materialItemSelect", 2);
+        }else if (i == 3)
+        {
+            GameObject.FindGameObjectWithTag("refObj").GetComponent<MeshRenderer>().material = Material4;
+            wingMaterial2.color = Color.yellow;
+            fanMaterial2.color = new Color32(226, 213, 42, 255);
+            PlayerPrefs.SetInt("materialItemSelect", 3);
+
+        }else if (i == 4)
+        {
+            GameObject.FindGameObjectWithTag("refObj").GetComponent<MeshRenderer>().material = Material5;
+            wingMaterial2.color = new Color32(141, 41, 186, 255);
+            fanMaterial2.color = new Color32(200, 127, 184, 255);
+            PlayerPrefs.SetInt("materialItemSelect", 4);
+
+        }else if (i == 5)
+        {
+            GameObject.FindGameObjectWithTag("refObj").GetComponent<MeshRenderer>().material = Material6;
+            wingMaterial2.color = Color.white;
+            fanMaterial2.color = Color.white;
+            PlayerPrefs.SetInt("materialItemSelect", 4);
+
+        }
+    }
     //Material Items
     public void MaterialItemOpen()
     {
