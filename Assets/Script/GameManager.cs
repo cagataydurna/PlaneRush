@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     {
         CoinCalculator(10000);
         Debug.Log(PlayerPrefs.GetInt("coinn"));
+        wingColor = wingMat.color;
     }
 
     void Update()

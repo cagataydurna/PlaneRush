@@ -12,6 +12,7 @@ public class LevelGenerator : MonoBehaviour
     public GameObject finalPanel;
      void Awake()
     {
+        Random.InitState(2);
         for (int i = 0; i < 12; i++)
         {
             Instantiate(road[Random.Range(0, road.Length - 1)], new Vector3(0, 0, counterRoad * 16),
