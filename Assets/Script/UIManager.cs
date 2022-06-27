@@ -76,6 +76,7 @@ public class UIManager : MonoBehaviour
     }
     public void Update()
     {
+        if (Ramp == null) GameObject.FindWithTag("ramp");
         if (radial_shine == true)
         {
             RadialShine.GetComponent<RectTransform>().Rotate(new Vector3(0, 0, 15f * Time.deltaTime));

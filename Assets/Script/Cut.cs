@@ -51,7 +51,10 @@ public class Cut : MonoBehaviour
          }
          
 
-      }
+      }else if (other.gameObject.tag == "collectableWing")
+      {
+         GameObject.FindGameObjectWithTag("wing").transform.localScale+=new Vector3(0,0,0.4f);
+         Destroy(other.gameObject);      }
    }
 
    private void Update()

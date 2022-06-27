@@ -30,7 +30,7 @@ public class CollisionController : MonoBehaviour
         if (collision.gameObject.tag == "collectableWing")
         {
             wing = GameObject.FindGameObjectWithTag("wing");
-            wing.transform.localScale+=new Vector3(0,0,0.4f);
+            GameObject.FindGameObjectWithTag("wing").transform.localScale+=new Vector3(0,0,0.4f);
             Destroy(collision.gameObject);
             GameManager._instance.VibrationPopGame();
 

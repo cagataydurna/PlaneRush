@@ -1113,6 +1113,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &449219925 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2678575093378574963, guid: dde869e8e7fee4d59b30397ecdbb2cc6, type: 3}
+  m_PrefabInstance: {fileID: 1439760348}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &466080768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,7 +1411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LayoutAnimator: {fileID: 1150104634}
   FillBar: {fileID: 1542960119}
-  Ramp: {fileID: 0}
+  Ramp: {fileID: 449219925}
   Settings_Open: {fileID: 1409428784}
   Settings_Close: {fileID: 761686943}
   Sound_On: {fileID: 255071688}

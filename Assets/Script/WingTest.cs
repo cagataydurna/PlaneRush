@@ -18,10 +18,12 @@ public class WingTest : MonoBehaviour
 
     void Update()
     {
-        if (this.gameObject.GetComponent<Renderer>().localBounds.size.z/2+Math.Abs(this.gameObject.GetComponent<Renderer>().localBounds.center.x) > 3)
+        
+        GameManager._instance.sizeOfWing = this.gameObject.GetComponent<Renderer>().bounds.size.z;
+        if (this.gameObject.GetComponent<Renderer>().bounds.size.z>2)
             CameraFollow._instance.FollowOffset += new Vector3(0,
-                this.gameObject.GetComponent<Renderer>().localBounds.size.z,
-                this.gameObject.GetComponent<Renderer>().localBounds.size.z);
+                1,
+                -1);
         
 
         
