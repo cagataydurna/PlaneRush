@@ -6,7 +6,26 @@ using UnityEngine.UI;
 public class Shop : MonoBehaviour
 {
 
-//GameObject.FindGameObjectWithTag("Chest").GetComponent<MeshRenderer>().material=MATERİAL BURA GELCEK
+    //GameObject.FindGameObjectWithTag("Chest").GetComponent<MeshRenderer>().material=MATERİAL BURA GELCEK
+    //Materials
+    public Material Material1;
+    public Material Material2;
+    public Material Material3;
+    public Material Material4;
+    public Material Material5;
+    public Material Material6;
+
+    //WING MATERIAL
+    
+    public Material wingMaterial2;
+    
+
+
+    //FAN MATERIAL
+    
+    public Material fanMaterial2;
+    
+    
     //Skills
     public GameObject ParticleEffect1;
     public GameObject ParticleEffect2;
@@ -23,6 +42,14 @@ public class Shop : MonoBehaviour
     public GameObject item3;
     public GameObject item4;
 
+    //Material Items
+    public GameObject materialItem1;
+    public GameObject materialItem2;
+    public GameObject materialItem3;
+    public GameObject materialItem4;
+    public GameObject materialItem5;
+    public GameObject materialItem6;
+
     //Locks
 
     public GameObject lock1;
@@ -30,13 +57,24 @@ public class Shop : MonoBehaviour
     public GameObject lock3;
     public GameObject lock4;
 
+    //MATERIAL LOCKS
+    public GameObject materialLock1;
+    public GameObject materialLock2;
+    public GameObject materialLock3;
+    public GameObject materialLock4;
+    public GameObject materialLock5;
+
+
     public void Awake()
     {
+        //TAIL
         if (PlayerPrefs.HasKey("itemSelect") == false)
             PlayerPrefs.SetInt("itemSelect", 0);
 
+        if (PlayerPrefs.GetInt("itemSelect") == 0)
+            ItemOpen();
 
-        if (PlayerPrefs.GetInt("itemSelect") == 1)
+        else if (PlayerPrefs.GetInt("itemSelect") == 1)
             Item1Open();
 
         else if (PlayerPrefs.GetInt("itemSelect") == 2)
@@ -47,8 +85,6 @@ public class Shop : MonoBehaviour
 
         else if (PlayerPrefs.GetInt("itemSelect") == 4)
             Item4Open();
-
-
 
 
         if (PlayerPrefs.HasKey("controlLock1") == false)
@@ -74,7 +110,150 @@ public class Shop : MonoBehaviour
 
         if (PlayerPrefs.GetInt("controlLock4") == 1)
             lock4.SetActive(false);
+
+        //MATERIAL
+        if (PlayerPrefs.HasKey("materialItemSelect") == false)
+            PlayerPrefs.SetInt("materialItemSelect", 0);
+
+        if (PlayerPrefs.GetInt("materialItemSelect") == 0)
+            MaterialItemOpen();
+
+        else if (PlayerPrefs.GetInt("materialItemSelect") == 1)
+            MaterialItemOpen2();
+
+        else if (PlayerPrefs.GetInt("materialItemSelect") == 2)
+            MaterialItemOpen3();
+
+        else if (PlayerPrefs.GetInt("materialItemSelect") == 3)
+            MaterialItemOpen4();
+
+        else if (PlayerPrefs.GetInt("materialItemSelect") == 4)
+            MaterialItemOpen5();
+
+        else if (PlayerPrefs.GetInt("materialItemSelect") == 5)
+            MaterialItemOpen6();
+
+
+        if (PlayerPrefs.HasKey("materialControlLock1") == false)
+            PlayerPrefs.SetInt("materialControlLock1", 0);
+
+        if (PlayerPrefs.HasKey("materialControlLock2") == false)
+            PlayerPrefs.SetInt("materialControlLock2", 0);
+
+        if (PlayerPrefs.HasKey("materialControlLock3") == false)
+            PlayerPrefs.SetInt("materialControlLock3", 0);
+
+        if (PlayerPrefs.HasKey("materialControlLock4") == false)
+            PlayerPrefs.SetInt("materialControlLock4", 0);
+
+        if (PlayerPrefs.HasKey("materialControlLock5") == false)
+            PlayerPrefs.SetInt("materialControlLock5", 0);
+
+
+        if (PlayerPrefs.GetInt("materialControlLock1") == 1)
+           materialLock1.SetActive(false);
+
+        if (PlayerPrefs.GetInt("materialControlLock2") == 1)
+            materialLock2.SetActive(false);
+
+        if (PlayerPrefs.GetInt("materialControlLock3") == 1)
+            materialLock3.SetActive(false);
+
+        if (PlayerPrefs.GetInt("materialControlLock4") == 1)
+            materialLock4.SetActive(false);
+
+        if (PlayerPrefs.GetInt("materialControlLock4") == 1)
+            materialLock5.SetActive(false);
+
+
+
     }
+    //Material Items
+    public void MaterialItemOpen()
+    {
+        GameObject.FindGameObjectWithTag("refObj").GetComponent<MeshRenderer>().material = Material1;
+        wingMaterial2.color = new Color32(225, 183, 108, 255);
+        fanMaterial2.color = new Color32(225,183,108,255);
+        materialItem1.GetComponent<Image>().sprite = Green;
+        materialItem2.GetComponent<Image>().sprite = Yellow;
+        materialItem3.GetComponent<Image>().sprite = Yellow;
+        materialItem4.GetComponent<Image>().sprite = Yellow;
+        materialItem5.GetComponent<Image>().sprite = Yellow;
+        materialItem6.GetComponent<Image>().sprite = Yellow;
+        PlayerPrefs.SetInt("materialItemSelect", 0);
+
+    }
+
+    public void MaterialItemOpen2()
+    {
+        GameObject.FindGameObjectWithTag("refObj").GetComponent<MeshRenderer>().material = Material2;
+        wingMaterial2.color = Color.red;
+        fanMaterial2.color = Color.red;
+        materialItem1.GetComponent<Image>().sprite = Yellow;
+        materialItem2.GetComponent<Image>().sprite = Green;
+        materialItem3.GetComponent<Image>().sprite = Yellow;
+        materialItem4.GetComponent<Image>().sprite = Yellow;
+        materialItem5.GetComponent<Image>().sprite = Yellow;
+        materialItem6.GetComponent<Image>().sprite = Yellow;
+        PlayerPrefs.SetInt("materialItemSelect", 1);
+    }
+
+    public void MaterialItemOpen3()
+    {
+        GameObject.FindGameObjectWithTag("refObj").GetComponent<MeshRenderer>().material = Material3;
+        wingMaterial2.color = Color.grey;
+        fanMaterial2.color = new Color32(212, 232, 240, 255);
+        materialItem1.GetComponent<Image>().sprite = Yellow;
+        materialItem2.GetComponent<Image>().sprite = Yellow;
+        materialItem3.GetComponent<Image>().sprite = Green;
+        materialItem4.GetComponent<Image>().sprite = Yellow;
+        materialItem5.GetComponent<Image>().sprite = Yellow;
+        materialItem6.GetComponent<Image>().sprite = Yellow;
+        PlayerPrefs.SetInt("materialItemSelect", 2);
+    }
+
+    public void MaterialItemOpen4()
+    {
+        GameObject.FindGameObjectWithTag("refObj").GetComponent<MeshRenderer>().material = Material4;
+        wingMaterial2.color = Color.yellow;
+        fanMaterial2.color = new Color32(226, 213, 42, 255);
+        materialItem1.GetComponent<Image>().sprite = Yellow;
+        materialItem2.GetComponent<Image>().sprite = Yellow;
+        materialItem3.GetComponent<Image>().sprite = Yellow;
+        materialItem4.GetComponent<Image>().sprite = Green;
+        materialItem5.GetComponent<Image>().sprite = Yellow;
+        materialItem6.GetComponent<Image>().sprite = Yellow;
+        PlayerPrefs.SetInt("materialItemSelect", 3);
+    }
+
+    public void MaterialItemOpen5()
+    {
+        GameObject.FindGameObjectWithTag("refObj").GetComponent<MeshRenderer>().material = Material5;
+        wingMaterial2.color = new Color32(141, 41, 186, 255);
+        fanMaterial2.color = new Color32(200, 127, 184, 255);
+        materialItem1.GetComponent<Image>().sprite = Yellow;
+        materialItem2.GetComponent<Image>().sprite = Yellow;
+        materialItem3.GetComponent<Image>().sprite = Yellow;
+        materialItem4.GetComponent<Image>().sprite = Yellow;
+        materialItem5.GetComponent<Image>().sprite = Green;
+        materialItem6.GetComponent<Image>().sprite = Yellow;
+        PlayerPrefs.SetInt("materialItemSelect", 4);
+    }
+
+    public void MaterialItemOpen6()
+    {
+        GameObject.FindGameObjectWithTag("refObj").GetComponent<MeshRenderer>().material = Material6;
+        wingMaterial2.color = Color.white;
+        fanMaterial2.color = Color.white;
+        materialItem1.GetComponent<Image>().sprite = Yellow;
+        materialItem2.GetComponent<Image>().sprite = Yellow;
+        materialItem3.GetComponent<Image>().sprite = Yellow;
+        materialItem4.GetComponent<Image>().sprite = Yellow;
+        materialItem5.GetComponent<Image>().sprite = Yellow;
+        materialItem6.GetComponent<Image>().sprite = Green;
+        PlayerPrefs.SetInt("materialItemSelect", 5);
+    }
+
 
     //ITEMS
     public void ItemOpen()
@@ -148,6 +327,82 @@ public class Shop : MonoBehaviour
         PlayerPrefs.SetInt("itemSelect", 4);
     }
 
+    //MATERIAL LOCKS
+    public void MaterialLock1Open()
+    {
+        int coin = PlayerPrefs.GetInt("coinn");
+        int materialControlLock1 = PlayerPrefs.GetInt("materialControlLock1");
+        if (coin >= 500 && materialControlLock1 == 0)
+        {
+            materialLock1.SetActive(false);
+            PlayerPrefs.SetInt("coinn", coin - 500);
+            PlayerPrefs.SetInt("materialControlLock1", 1);
+            MaterialItemOpen2();
+            UIManager._instance.CoinUpdate();
+        }
+
+    }
+
+    public void MaterialLock2Open()
+    {
+        int coin = PlayerPrefs.GetInt("coinn");
+        int materialControlLock2 = PlayerPrefs.GetInt("materialControlLock2");
+        if (coin >= 500 && materialControlLock2 == 0)
+        {
+            materialLock2.SetActive(false);
+            PlayerPrefs.SetInt("coinn", coin - 500);
+            PlayerPrefs.SetInt("materialControlLock2", 1);
+            MaterialItemOpen3();
+            UIManager._instance.CoinUpdate();
+        }
+
+    }
+
+    public void MaterialLock3Open()
+    {
+        int coin = PlayerPrefs.GetInt("coinn");
+        int materialControlLock3 = PlayerPrefs.GetInt("materialControlLock3");
+        if (coin >= 500 && materialControlLock3 == 0)
+        {
+            materialLock3.SetActive(false);
+            PlayerPrefs.SetInt("coinn", coin - 500);
+            PlayerPrefs.SetInt("materialControlLock3", 1);
+            MaterialItemOpen4();
+            UIManager._instance.CoinUpdate();
+        }
+
+    }
+
+    public void MaterialLock4Open()
+    {
+        int coin = PlayerPrefs.GetInt("coinn");
+        int materialControlLock4 = PlayerPrefs.GetInt("materialControlLock4");
+        if (coin >= 500 && materialControlLock4 == 0)
+        {
+            materialLock4.SetActive(false);
+            PlayerPrefs.SetInt("coinn", coin - 500);
+            PlayerPrefs.SetInt("materialControlLock4", 1);
+            MaterialItemOpen5();
+            UIManager._instance.CoinUpdate();
+        }
+
+    }
+
+    public void MaterialLock5Open()
+    {
+        int coin = PlayerPrefs.GetInt("coinn");
+        int materialControlLock5 = PlayerPrefs.GetInt("materialControlLock5");
+        if (coin >= 500 && materialControlLock5 == 0)
+        {
+            materialLock5.SetActive(false);
+            PlayerPrefs.SetInt("coinn", coin - 500);
+            PlayerPrefs.SetInt("materialControlLock5", 1);
+            MaterialItemOpen6();
+            UIManager._instance.CoinUpdate();
+        }
+
+    }
+
     //LOCKS
 
     public void Lock1Open()
@@ -163,7 +418,7 @@ public class Shop : MonoBehaviour
                     UIManager._instance.CoinUpdate();
                 }
 
-            }
+       }
         public void Lock2Open()
         {
             int coin = PlayerPrefs.GetInt("coinn");
