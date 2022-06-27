@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour
     {
         CoinCalculator(10000);
         Debug.Log(PlayerPrefs.GetInt("coinn"));
-        wingColor = wingMat.color;
     }
 
     void Update()
@@ -89,5 +88,11 @@ public class GameManager : MonoBehaviour
     {
         if(!isVibrationOff)Vibration.VibratePop();
         
+    }
+
+    public void WingColorInit()
+    {
+        wingColor = wingMat.color;
+
     }
 }
