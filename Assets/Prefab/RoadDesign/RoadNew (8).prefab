@@ -119,6 +119,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WingCollectable (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1850934421592813505, guid: c74549fc9e3174bbbb965a9bc78059fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1850934421592813507, guid: c74549fc9e3174bbbb965a9bc78059fa, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -266,6 +270,10 @@ PrefabInstance:
     - target: {fileID: 1850934421592813505, guid: c74549fc9e3174bbbb965a9bc78059fa, type: 3}
       propertyPath: m_Name
       value: WingCollectable (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850934421592813505, guid: c74549fc9e3174bbbb965a9bc78059fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1850934421592813507, guid: c74549fc9e3174bbbb965a9bc78059fa, type: 3}
       propertyPath: m_RootOrder
@@ -415,6 +423,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WingCollectable (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1850934421592813505, guid: c74549fc9e3174bbbb965a9bc78059fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1850934421592813507, guid: c74549fc9e3174bbbb965a9bc78059fa, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -488,6 +500,10 @@ PrefabInstance:
     - target: {fileID: 1850934421592813505, guid: c74549fc9e3174bbbb965a9bc78059fa, type: 3}
       propertyPath: m_Name
       value: WingCollectable (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850934421592813505, guid: c74549fc9e3174bbbb965a9bc78059fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1850934421592813507, guid: c74549fc9e3174bbbb965a9bc78059fa, type: 3}
       propertyPath: m_RootOrder
@@ -636,6 +652,10 @@ PrefabInstance:
     - target: {fileID: 1850934421592813505, guid: c74549fc9e3174bbbb965a9bc78059fa, type: 3}
       propertyPath: m_Name
       value: WingCollectable (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850934421592813505, guid: c74549fc9e3174bbbb965a9bc78059fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1850934421592813507, guid: c74549fc9e3174bbbb965a9bc78059fa, type: 3}
       propertyPath: m_RootOrder

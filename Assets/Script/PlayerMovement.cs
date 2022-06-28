@@ -71,8 +71,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 transform.Translate(Vector3.forward * Time.deltaTime * movementSpeed);
                 Physics.gravity = new Vector3(0, 0, 0);
-                transform.localPosition += new Vector3(horizontal * Time.deltaTime * flySpeed*2,
-                    (vertical) * Time.deltaTime * flySpeed, 0);
+                transform.localPosition += new Vector3(horizontal * Time.deltaTime * movementSpeed,
+                    (vertical) * Time.deltaTime * movementSpeed, 0);
                 transform.rotation=Quaternion.Lerp(transform.rotation, Quaternion.Euler(Mathf.Clamp(-vertical*8*GameManager._instance.sizeOfWing,-15,15),0,
                     Mathf.Clamp(-horizontal * 8*GameManager._instance.sizeOfWing,-10,10)),Time.deltaTime);
                 if(Input.touchCount==0) FixRotation();

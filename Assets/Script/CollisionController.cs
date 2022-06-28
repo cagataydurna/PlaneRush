@@ -86,7 +86,7 @@ public class CollisionController : MonoBehaviour
             Destroy(collision.gameObject.GetComponent<MeshRenderer>());
             collision.gameObject.transform.GetChild(1).GameObject().SetActive(false);
             Destroy(collision.gameObject.GetComponent<MeshCollider>());
-            GameObject.FindGameObjectWithTag("wing").transform.localScale-=new Vector3(0,0,0.4f);
+            GameObject.FindGameObjectWithTag("wing").transform.localScale-=new Vector3(0,0,0.8f);
             GameManager._instance.VibrationPopGame();
             if (GameObject.FindGameObjectWithTag("wing").transform.localScale.z < 0.4f)
             {
@@ -99,18 +99,26 @@ public class CollisionController : MonoBehaviour
             GameManager._instance.isFailFinish = true;
             GameManager._instance.VibrationPopGame();
             
+        }else if (collision.gameObject.tag == "finishLastPanel")
+        {
+            FindObjectOfType<CameraFollow>().enabled = false;
+            StartCoroutine(Wait());
         }
+        else
+        {
+            GameManager._instance.isFailFinish = true;
+            GameManager._instance.VibrationPopGame();
+        } ;
     }
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(9f);
-        PlayerMovement._instance.isFly = false;
-        particleTurbo.GetComponent<ParticleSystem>().Stop();
-        PlayerMovement._instance.FixRotation();
-        transform.DOMoveY(0.84f, 4f, false);
+        yield return new WaitForSeconds(2f);
+        GameManager._instance.isFailFinish = true;
+        
 
     }
+    
 
     
 

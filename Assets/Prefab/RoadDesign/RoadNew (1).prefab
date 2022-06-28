@@ -172,6 +172,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StopSign 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7574846786393565047, guid: 59e59cc3640384451b37856a1fe8b7b7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59e59cc3640384451b37856a1fe8b7b7, type: 3}
 --- !u!4 &6983868140545913637 stripped

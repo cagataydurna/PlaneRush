@@ -411,6 +411,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: House2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8130618024992599643, guid: f7c35ebb8c3f3465fbe71bd4f4f3faa3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8907577628075111649, guid: f7c35ebb8c3f3465fbe71bd4f4f3faa3, type: 3}
       propertyPath: m_RootOrder
       value: 2

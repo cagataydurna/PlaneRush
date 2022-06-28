@@ -10317,6 +10317,51 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7772634433777142329, guid: 4e9ea57acc8c04a0686ccd8e5a53db1b, type: 3}
   m_PrefabInstance: {fileID: 1910580467837482677}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1117155866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1117155867}
+  - component: {fileID: 1117155868}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: finishLastPanel
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1117155867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117155866}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -71.7, y: -111.7, z: 115.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1487702573}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1117155868
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117155866}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 38.59, y: 69.71, z: 1}
+  m_Center: {x: 0, y: -0.72, z: 0}
 --- !u!1 &1127500696
 GameObject:
   m_ObjectHideFlags: 0
@@ -13754,6 +13799,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454185135}
   m_CullTransparentMesh: 1
+--- !u!4 &1487702573 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2320406879743975534, guid: 2dc9b9e735cd14a51a15b5376b683cc9, type: 3}
+  m_PrefabInstance: {fileID: 103988130}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1508334784
 GameObject:
   m_ObjectHideFlags: 0
@@ -19649,7 +19699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9090945517109940353, guid: 4e9ea57acc8c04a0686ccd8e5a53db1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.01
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9090945517109940353, guid: 4e9ea57acc8c04a0686ccd8e5a53db1b, type: 3}
       propertyPath: m_LocalPosition.z

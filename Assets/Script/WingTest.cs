@@ -33,7 +33,7 @@ public class WingTest : MonoBehaviour
                 particleLeft.transform.localPosition = new Vector3(this.gameObject.GetComponent<Renderer>().localBounds.center.x - this.gameObject.GetComponent<Renderer>().localBounds.size.z
                     , 2.3f,
                     3);
-                player.transform.Rotate(Vector3.back * Time.deltaTime * transform.localScale.z * 5);
+                player.transform.Rotate(Vector3.back * Time.deltaTime * transform.localScale.z * 2);
 
             }
             else if (this.gameObject.GetComponent<Renderer>().localBounds.center.z > -0.3)
@@ -45,7 +45,7 @@ public class WingTest : MonoBehaviour
                 particleLeft.transform.localPosition = new Vector3(this.gameObject.GetComponent<Renderer>().localBounds.center.x + (this.gameObject.GetComponent<Renderer>().localBounds.size.z)
                     , 2.3f,
                     3);
-                player.transform.Rotate(Vector3.forward * Time.deltaTime * transform.localScale.z * 5);
+                player.transform.Rotate(Vector3.forward * Time.deltaTime * transform.localScale.z * 2);
             }
             else
             {
