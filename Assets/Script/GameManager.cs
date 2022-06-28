@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
-        CoinCalculator(10000);
+        CoinCalculator(0);
         Debug.Log(PlayerPrefs.GetInt("coinn"));
     }
 
