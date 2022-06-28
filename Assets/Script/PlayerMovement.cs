@@ -33,8 +33,9 @@ public class PlayerMovement : MonoBehaviour
 
 
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -clampValue, clampValue),
-            transform.position.y,
+            Mathf.Clamp(transform.position.y,-2f,37f),
             transform.position.z);
+        
         
         float horizontal = joystick.Horizontal;
         float vertical = joystick.Vertical;

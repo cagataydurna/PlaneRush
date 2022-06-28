@@ -20,11 +20,6 @@ public class WingTest : MonoBehaviour
     void Update()
     {
         
-        GameManager._instance.sizeOfWing = this.gameObject.GetComponent<Renderer>().bounds.size.z;
-        if (this.gameObject.GetComponent<Renderer>().bounds.size.z>2)
-            CameraFollow._instance.FollowOffset += new Vector3(0,
-                1,
-                -1);
         
 
         

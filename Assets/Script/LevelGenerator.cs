@@ -8,8 +8,7 @@ public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] private int counterRoad = 2;
     public GameObject[] road;
-    public GameObject finalLine;
-    public GameObject finalPanel;
+    
      void Awake()
     {
         Random.InitState(2);

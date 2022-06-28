@@ -43,27 +43,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1591390369409859755, guid: 9ed96998fe8064df3aad70ab8dd98cd2, type: 3}
       propertyPath: m_text
-      value: 32x
+      value: 4.2x
       objectReference: {fileID: 0}
     - target: {fileID: 1591390369717658185, guid: 9ed96998fe8064df3aad70ab8dd98cd2, type: 3}
       propertyPath: m_text
-      value: 30x
+      value: 4.0x
       objectReference: {fileID: 0}
     - target: {fileID: 1591390369894260142, guid: 9ed96998fe8064df3aad70ab8dd98cd2, type: 3}
       propertyPath: m_text
-      value: 26x
+      value: 3.6x
       objectReference: {fileID: 0}
     - target: {fileID: 1591390370343632126, guid: 9ed96998fe8064df3aad70ab8dd98cd2, type: 3}
       propertyPath: m_text
-      value: 34x
+      value: 5.6x
       objectReference: {fileID: 0}
     - target: {fileID: 1591390371062896718, guid: 9ed96998fe8064df3aad70ab8dd98cd2, type: 3}
       propertyPath: m_text
-      value: 34x
+      value: 5.4x
       objectReference: {fileID: 0}
     - target: {fileID: 1591390371222027261, guid: 9ed96998fe8064df3aad70ab8dd98cd2, type: 3}
       propertyPath: m_text
-      value: 28x
+      value: 3.8x
       objectReference: {fileID: 0}
     - target: {fileID: 8096014845280312032, guid: 9ed96998fe8064df3aad70ab8dd98cd2, type: 3}
       propertyPath: m_Name
@@ -129,27 +129,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1591390369409859755, guid: 9ed96998fe8064df3aad70ab8dd98cd2, type: 3}
       propertyPath: m_text
-      value: 20x
+      value: 3.0x
       objectReference: {fileID: 0}
     - target: {fileID: 1591390369717658185, guid: 9ed96998fe8064df3aad70ab8dd98cd2, type: 3}
       propertyPath: m_text
-      value: 18x
+      value: 2.8x
       objectReference: {fileID: 0}
     - target: {fileID: 1591390369894260142, guid: 9ed96998fe8064df3aad70ab8dd98cd2, type: 3}
       propertyPath: m_text
-      value: 14x
+      value: 2.4x
       objectReference: {fileID: 0}
     - target: {fileID: 1591390370343632126, guid: 9ed96998fe8064df3aad70ab8dd98cd2, type: 3}
       propertyPath: m_text
-      value: 24x
+      value: 3.4x
       objectReference: {fileID: 0}
     - target: {fileID: 1591390371062896718, guid: 9ed96998fe8064df3aad70ab8dd98cd2, type: 3}
       propertyPath: m_text
-      value: 22x
+      value: 3.2x
       objectReference: {fileID: 0}
     - target: {fileID: 1591390371222027261, guid: 9ed96998fe8064df3aad70ab8dd98cd2, type: 3}
       propertyPath: m_text
-      value: 16x
+      value: 2.6x
       objectReference: {fileID: 0}
     - target: {fileID: 3028388758852871561, guid: 9ed96998fe8064df3aad70ab8dd98cd2, type: 3}
       propertyPath: m_Size.y
@@ -217,6 +217,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2320406879743975534}
     m_Modifications:
+    - target: {fileID: 1591390369409859755, guid: 9ed96998fe8064df3aad70ab8dd98cd2, type: 3}
+      propertyPath: m_text
+      value: 1.8x
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591390369717658185, guid: 9ed96998fe8064df3aad70ab8dd98cd2, type: 3}
+      propertyPath: m_text
+      value: 1.6x
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591390369894260142, guid: 9ed96998fe8064df3aad70ab8dd98cd2, type: 3}
+      propertyPath: m_text
+      value: 1.2x
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591390370343632126, guid: 9ed96998fe8064df3aad70ab8dd98cd2, type: 3}
+      propertyPath: m_text
+      value: 2.2x
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591390371062896718, guid: 9ed96998fe8064df3aad70ab8dd98cd2, type: 3}
+      propertyPath: m_text
+      value: 2.0x
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591390371222027261, guid: 9ed96998fe8064df3aad70ab8dd98cd2, type: 3}
+      propertyPath: m_text
+      value: 1.4x
+      objectReference: {fileID: 0}
     - target: {fileID: 8096014845280312032, guid: 9ed96998fe8064df3aad70ab8dd98cd2, type: 3}
       propertyPath: m_Name
       value: BuildingsWithPanels
