@@ -208,7 +208,7 @@ public class Shop : MonoBehaviour
     public void MaterialItemOpen3()
     {
         GameObject.FindGameObjectWithTag("refObj").GetComponent<MeshRenderer>().material = Material3;
-        wingMaterial2.color = Color.grey;
+        wingMaterial2.color =new  Color32(57,142,149,255);
         fanMaterial2.color = new Color32(212, 232, 240, 255);
         materialItem1.GetComponent<Image>().sprite = Yellow;
         materialItem2.GetComponent<Image>().sprite = Yellow;

@@ -9,11 +9,11 @@ using UnityEngine.UIElements;
 public class CollisionController : MonoBehaviour
 {
     public GameObject wing,particleTurbo,chest;
-    
-    
+
     
 
-     void Start()
+
+    void Start()
      {
          particleTurbo = GameObject.FindWithTag("particleTurbo");
          chest = GameObject.FindWithTag("Chest");
@@ -81,6 +81,7 @@ public class CollisionController : MonoBehaviour
             //OyunSonuPanel Çalışacağı yer
             SoundManager._instance.EndGameSoundEffect();
             GameManager._instance.finishPanelCount++;
+            Debug.Log(GameManager._instance.finishPanelCount);
             collision.gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
             Destroy(collision.gameObject.GetComponent<MeshRenderer>());
             collision.gameObject.transform.GetChild(1).GameObject().SetActive(false);

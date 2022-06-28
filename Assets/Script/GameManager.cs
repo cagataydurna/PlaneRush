@@ -27,13 +27,19 @@ public class GameManager : MonoBehaviour
         blowParticle.SetActive(false);
         chest=GameObject.FindWithTag("Chest");
         Vibration.Init();
-
+        
+        
+            if (PlayerPrefs.HasKey("LevelCounter") == false)
+            {
+                PlayerPrefs.SetInt("LevelCounter", 0);
+            }
+        
     }
 
     public void Start()
     {
-        CoinCalculator(0);
-        Debug.Log(PlayerPrefs.GetInt("coinn"));
+        CoinCalculator(0.0f);
+        Debug.Log(PlayerPrefs.GetFloat("coinn"));
     }
 
     void Update()
@@ -53,18 +59,61 @@ public class GameManager : MonoBehaviour
             UIManager._instance.FinishScreen();
             CoinCalculator(30);
             UIManager._instance.CoinUpdate();
+            PlayerPrefs.SetInt("LevelCounter", PlayerPrefs.GetInt("LevelCounter") + 1);
+            Debug.Log(PlayerPrefs.GetInt("LevelCounter"));
             isFailFinish = false;
             
             
             
         }
     }
-    public void CoinCalculator(int coin)
+    public void CoinCalculator(float coin)
     {
         if (PlayerPrefs.HasKey("coinn"))
         {
-            int oldCoin = PlayerPrefs.GetInt("coinn");
-            PlayerPrefs.SetInt("coinn", oldCoin + coin);
+            float oldCoin = PlayerPrefs.GetFloat("coinn");
+            if(finishPanelCount == 1)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 1.2f));
+            }
+            else if (finishPanelCount == 2)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 1.4f));
+            }
+            else if (finishPanelCount == 3)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 1.6f));
+            }
+            else if (finishPanelCount == 4)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 1.8f));
+            }
+            else if (finishPanelCount == 5)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 2.0f));
+            }
+            else if (finishPanelCount == 6)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 2.2f));
+            }
+            else if (finishPanelCount == 7)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 2.4f));
+            }
+            else if (finishPanelCount == 8)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 2.6f));
+            }
+            else if (finishPanelCount == 9)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 2.8f));
+            }
+            else if (finishPanelCount == 10)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 3.0f));
+            }
+
+
         }
         else
         {
