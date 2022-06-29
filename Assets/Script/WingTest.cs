@@ -19,7 +19,7 @@ public class WingTest : MonoBehaviour
 
     void Update()
     {
-        
+
         
 
         

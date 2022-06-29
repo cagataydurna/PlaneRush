@@ -81,7 +81,6 @@ public class CollisionController : MonoBehaviour
             //OyunSonuPanel Çalışacağı yer
             SoundManager._instance.EndGameSoundEffect();
             GameManager._instance.finishPanelCount++;
-            Debug.Log(GameManager._instance.finishPanelCount);
             collision.gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
             Destroy(collision.gameObject.GetComponent<MeshRenderer>());
             collision.gameObject.transform.GetChild(1).GameObject().SetActive(false);
@@ -97,6 +96,8 @@ public class CollisionController : MonoBehaviour
         }else if (collision.gameObject.tag == "finishGround")
         {
             GameManager._instance.isFailFinish = true;
+            GameManager._instance.FailFinish();
+
             GameManager._instance.VibrationPopGame();
             
         }else if (collision.gameObject.tag == "finishLastPanel")
@@ -104,9 +105,10 @@ public class CollisionController : MonoBehaviour
             FindObjectOfType<CameraFollow>().enabled = false;
             StartCoroutine(Wait());
         }
-        else
+        else if (collision.gameObject.tag == "blade")
         {
             GameManager._instance.isFailFinish = true;
+            GameManager._instance.FailFinish();
             GameManager._instance.VibrationPopGame();
         } ;
     }

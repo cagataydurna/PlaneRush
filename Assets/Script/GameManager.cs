@@ -6,10 +6,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager _instance;
+   
+    
     public bool isFinish;
     public Material crossSectionMat,wingMat;
     public Color wingColor;
-    public ParticleSystem finishParticle;
     public float sizeOfWing;//oyun sonundaki kanat uzunluğu
     public bool isFailFinish;//çarpınca oyun bitişi
     GameObject blowParticle,chest;
@@ -17,8 +18,13 @@ public class GameManager : MonoBehaviour
     public bool isVibrationOff;
     void Awake()
     {   
+        if(_instance == null)
+        {
+            _instance = this;
+        }
+        
         isFinish = false;
-        if (_instance == null) _instance = this;
+        isFailFinish = false;
         GameObject.FindWithTag("particleLeft").GetComponent<ParticleSystem>().Stop();
        // GameObject.FindWithTag("particleTurbo").GetComponent<ParticleSystem>().Stop();
        // GameObject.FindWithTag("finishPanelParticle").GetComponent<ParticleSystem>().Stop();
@@ -44,27 +50,17 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-         if (isFailFinish)
-         {
-            if(PlayerPrefs.GetInt("NoAds") == 0)
+
+        if (isFailFinish)
+        {
+            if (PlayerPrefs.GetInt("NoAds") == 0)
             {
                 AdManager._instance.RequestInterstitial();
             }
-            
-            AdManager._instance.RequestRewardedAd();
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
-            blowParticle.SetActive(true);
-            chest.SetActive(false);
-            blowParticle.GetComponent<ParticleSystem>().Play();
-            UIManager._instance.FinishScreen();
-            CoinCalculator(30);
-            UIManager._instance.CoinUpdate();
-            PlayerPrefs.SetInt("LevelCounter", PlayerPrefs.GetInt("LevelCounter") + 1);
-            Debug.Log(PlayerPrefs.GetInt("LevelCounter"));
-            isFailFinish = false;
-            
-            
-            
+
+            FailFinish();
+
+
         }
     }
     public void CoinCalculator(float coin)
@@ -143,5 +139,20 @@ public class GameManager : MonoBehaviour
     {
         wingColor = wingMat.color;
 
+    }
+
+    public void FailFinish()
+    {
+        AdManager._instance.RequestRewardedAd();
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
+        blowParticle.SetActive(true);
+        chest.SetActive(false);
+        blowParticle.GetComponent<ParticleSystem>().Play();
+        UIManager._instance.FinishScreen();
+        CoinCalculator(30);
+        UIManager._instance.CoinUpdate();
+        PlayerPrefs.SetInt("LevelCounter", PlayerPrefs.GetInt("LevelCounter") + 1);
+        Debug.Log(PlayerPrefs.GetInt("LevelCounter"));
+        isFailFinish = false;
     }
 }
