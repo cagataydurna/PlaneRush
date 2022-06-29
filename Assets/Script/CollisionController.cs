@@ -110,7 +110,13 @@ public class CollisionController : MonoBehaviour
             GameManager._instance.isFailFinish = true;
             GameManager._instance.FailFinish();
             GameManager._instance.VibrationPopGame();
-        } ;
+        }
+        else
+        {
+            GameManager._instance.isFailFinish = true;
+            GameManager._instance.FailFinish();
+            GameManager._instance.VibrationPopGame();
+        }
     }
 
     IEnumerator Wait()
