@@ -70,9 +70,10 @@ public class AdManager : MonoBehaviour
     {
         if(PlayerPrefs.GetInt("NoAds") == 0)
         {
-            if (this.interstitial.IsLoaded())
+            if (interstitial == null) RequestInterstitial();
+            if (interstitial.IsLoaded())
             {
-                this.interstitial.Show();
+                interstitial.Show();
             }
         }
         
