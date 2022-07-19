@@ -345,12 +345,12 @@ public class Shop : MonoBehaviour
     //MATERIAL LOCKS
     public void MaterialLock1Open()
     {
-        int coin = PlayerPrefs.GetInt("coinn");
+        float coin = PlayerPrefs.GetFloat("coinn");
         int materialControlLock1 = PlayerPrefs.GetInt("materialControlLock1");
         if (coin >= 500 && materialControlLock1 == 0)
         {
             materialLock1.SetActive(false);
-            PlayerPrefs.SetInt("coinn", coin - 500);
+            PlayerPrefs.SetFloat("coinn", coin - 500);
             PlayerPrefs.SetInt("materialControlLock1", 1);
             MaterialItemOpen2();
             UIManager._instance.CoinUpdate();
@@ -360,12 +360,12 @@ public class Shop : MonoBehaviour
 
     public void MaterialLock2Open()
     {
-        int coin = PlayerPrefs.GetInt("coinn");
+        float coin = PlayerPrefs.GetFloat("coinn");
         int materialControlLock2 = PlayerPrefs.GetInt("materialControlLock2");
         if (coin >= 500 && materialControlLock2 == 0)
         {
             materialLock2.SetActive(false);
-            PlayerPrefs.SetInt("coinn", coin - 500);
+            PlayerPrefs.SetFloat("coinn", coin - 500);
             PlayerPrefs.SetInt("materialControlLock2", 1);
             MaterialItemOpen3();
             UIManager._instance.CoinUpdate();
@@ -375,12 +375,12 @@ public class Shop : MonoBehaviour
 
     public void MaterialLock3Open()
     {
-        int coin = PlayerPrefs.GetInt("coinn");
+        float coin = PlayerPrefs.GetFloat("coinn");
         int materialControlLock3 = PlayerPrefs.GetInt("materialControlLock3");
         if (coin >= 500 && materialControlLock3 == 0)
         {
             materialLock3.SetActive(false);
-            PlayerPrefs.SetInt("coinn", coin - 500);
+            PlayerPrefs.SetFloat("coinn", coin - 500);
             PlayerPrefs.SetInt("materialControlLock3", 1);
             MaterialItemOpen4();
             UIManager._instance.CoinUpdate();
@@ -390,12 +390,12 @@ public class Shop : MonoBehaviour
 
     public void MaterialLock4Open()
     {
-        int coin = PlayerPrefs.GetInt("coinn");
+        float coin = PlayerPrefs.GetFloat("coinn");
         int materialControlLock4 = PlayerPrefs.GetInt("materialControlLock4");
         if (coin >= 500 && materialControlLock4 == 0)
         {
             materialLock4.SetActive(false);
-            PlayerPrefs.SetInt("coinn", coin - 500);
+            PlayerPrefs.SetFloat("coinn", coin - 500);
             PlayerPrefs.SetInt("materialControlLock4", 1);
             MaterialItemOpen5();
             UIManager._instance.CoinUpdate();
@@ -405,12 +405,12 @@ public class Shop : MonoBehaviour
 
     public void MaterialLock5Open()
     {
-        int coin = PlayerPrefs.GetInt("coinn");
+        float coin = PlayerPrefs.GetFloat("coinn");
         int materialControlLock5 = PlayerPrefs.GetInt("materialControlLock5");
         if (coin >= 500 && materialControlLock5 == 0)
         {
             materialLock5.SetActive(false);
-            PlayerPrefs.SetInt("coinn", coin - 500);
+            PlayerPrefs.SetFloat("coinn", coin - 500);
             PlayerPrefs.SetInt("materialControlLock5", 1);
             MaterialItemOpen6();
             UIManager._instance.CoinUpdate();
@@ -422,12 +422,12 @@ public class Shop : MonoBehaviour
 
     public void Lock1Open()
      {
-         int coin = PlayerPrefs.GetInt("coinn");
-         int controlLock1 = PlayerPrefs.GetInt("controlLock1");
-         if (coin >= 500 && controlLock1 == 0)
+        float coin = PlayerPrefs.GetFloat("coinn");
+        int controlLock1 = PlayerPrefs.GetInt("controlLock1");
+         if (coin >= 50 && controlLock1 == 0)
            {
                     lock1.SetActive(false);
-                    PlayerPrefs.SetInt("coinn", coin - 500);
+                    PlayerPrefs.SetFloat("coinn", coin - 50);
                     PlayerPrefs.SetInt("controlLock1", 1);
                     Item1Open();
                     UIManager._instance.CoinUpdate();
@@ -436,12 +436,12 @@ public class Shop : MonoBehaviour
        }
         public void Lock2Open()
         {
-            int coin = PlayerPrefs.GetInt("coinn");
-            int controlLock2 = PlayerPrefs.GetInt("controlLock2");
+        float coin = PlayerPrefs.GetFloat("coinn");
+        int controlLock2 = PlayerPrefs.GetInt("controlLock2");
             if (coin >= 1000 && controlLock2 == 0)
             {
                 lock2.SetActive(false);
-                PlayerPrefs.SetInt("coinn", coin - 1000);
+                PlayerPrefs.SetFloat("coinn", coin - 1000);
                 PlayerPrefs.SetInt("controlLock2", 1);
                 Item2Open();
                 UIManager._instance.CoinUpdate();
@@ -451,12 +451,12 @@ public class Shop : MonoBehaviour
 
     public void Lock3Open()
     {
-        int coin = PlayerPrefs.GetInt("coinn");
+        float coin = PlayerPrefs.GetFloat("coinn");
         int controlLock3 = PlayerPrefs.GetInt("controlLock3");
         if (coin >= 1000 && controlLock3 == 0)
         {
             lock3.SetActive(false);
-            PlayerPrefs.SetInt("coinn", coin - 1000);
+            PlayerPrefs.SetFloat("coinn", coin - 1000);
             PlayerPrefs.SetInt("controlLock3", 1);
             Item3Open();
             UIManager._instance.CoinUpdate();
@@ -466,12 +466,12 @@ public class Shop : MonoBehaviour
 
     public void Lock4Open()
     {
-        int coin = PlayerPrefs.GetInt("coinn");
+        float coin = PlayerPrefs.GetFloat("coinn");
         int controlLock4 = PlayerPrefs.GetInt("controlLock4");
         if (coin >= 1000 && controlLock4 == 0)
         {
             lock4.SetActive(false);
-            PlayerPrefs.SetInt("coinn", coin - 1000);
+            PlayerPrefs.SetFloat("coinn", coin - 1000);
             PlayerPrefs.SetInt("controlLock4", 1);
             Item4Open();
             UIManager._instance.CoinUpdate();

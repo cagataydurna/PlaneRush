@@ -167,7 +167,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            PlayerPrefs.SetInt("coinn", 0);
+            PlayerPrefs.SetFloat("coinn", 0);
         }
     }
 
