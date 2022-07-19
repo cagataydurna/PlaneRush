@@ -103,7 +103,7 @@ public class AdManager : MonoBehaviour
     public void HandleUserEarnedReward(object sender, Reward args)
     {
         UIManager._instance.StartCoroutine("AfterRewardScreen");
-        GameManager._instance.CoinCalculator(100);
+        GameManager._instance.CoinCalculator(20.0f);
     }
 
     public void OnDestroy()

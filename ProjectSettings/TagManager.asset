@@ -21,6 +21,7 @@ TagManager:
   - blowParticle
   - finishLastPanel
   - blade
+  - finishLine
   layers:
   - Default
   - TransparentFX

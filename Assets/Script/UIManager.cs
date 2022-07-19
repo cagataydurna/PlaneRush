@@ -111,7 +111,7 @@ public class UIManager : MonoBehaviour
 
     public void CoinUpdate()
     {
-        CoinText.text = PlayerPrefs.GetInt("coinn").ToString();
+        CoinText.text = PlayerPrefs.GetFloat("coinn").ToString();
     }
 
     public void PlayButton()

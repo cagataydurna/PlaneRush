@@ -410,6 +410,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameObject (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5961817615311371396, guid: 2dc9b9e735cd14a51a15b5376b683cc9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.838608
+      objectReference: {fileID: 0}
+    - target: {fileID: 5961817615311371396, guid: 2dc9b9e735cd14a51a15b5376b683cc9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -143
+      objectReference: {fileID: 0}
+    - target: {fileID: 5961817615311371396, guid: 2dc9b9e735cd14a51a15b5376b683cc9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.4
+      objectReference: {fileID: 0}
     - target: {fileID: 6858268310233560607, guid: 2dc9b9e735cd14a51a15b5376b683cc9, type: 3}
       propertyPath: m_Convex
       value: 1

@@ -108,6 +108,60 @@ public class GameManager : MonoBehaviour
             {
                 PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 3.0f));
             }
+            else if (finishPanelCount == 11)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 3.2f));
+            }
+            else if (finishPanelCount == 12)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 3.4f));
+            }
+            else if (finishPanelCount == 13)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 3.6f));
+            }
+            else if (finishPanelCount == 14)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 3.8f));
+            }
+            else if (finishPanelCount == 15)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 4.0f));
+            }
+            else if (finishPanelCount == 16)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 4.2f));
+            }
+            else if (finishPanelCount == 17)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 4.4f));
+            }
+            else if (finishPanelCount == 18)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 4.6f));
+            }
+            else if (finishPanelCount == 19)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 4.8f));
+            }
+            else if (finishPanelCount == 20)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 5.0f));
+            }
+            else if (finishPanelCount == 21)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 5.2f));
+            }
+            else if (finishPanelCount == 22)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 5.4f));
+            }
+            else if (finishPanelCount == 23)
+            {
+                PlayerPrefs.SetFloat("coinn", oldCoin + (coin * 5.6f));
+
+            }
+
 
 
         }
@@ -149,10 +203,12 @@ public class GameManager : MonoBehaviour
         chest.SetActive(false);
         blowParticle.GetComponent<ParticleSystem>().Play();
         UIManager._instance.FinishScreen();
-        CoinCalculator(30);
+        CoinCalculator(20);
         UIManager._instance.CoinUpdate();
         PlayerPrefs.SetInt("LevelCounter", PlayerPrefs.GetInt("LevelCounter") + 1);
         Debug.Log(PlayerPrefs.GetInt("LevelCounter"));
         isFailFinish = false;
     }
+
+   
 }
